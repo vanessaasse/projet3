@@ -8,11 +8,11 @@ abstract class Model // une classe abstraite ne peut pas être instanciée, pas 
 
 
 
-    protected function runRequest ($sql, $params == null)
+    protected function runRequest ($sql, $params = null)
     {
         if($params == null)
         {
-            $result = $this->getDb()->query($ql); // execution directe
+            $result = $this->getDb()->query($sql); // execution directe
         }
         else
         {
