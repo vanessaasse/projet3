@@ -4,7 +4,10 @@ require_once 'Model.php';
 
 class Post extends Model
 {
-    // Pour afficher tous les posts
+    /**
+     * Pour afficher tous les posts
+     * @return PDOStatement
+     */
     public function getPosts()
     {
         $sql = 'SELECT id, title, content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM post ORDER BY date';
@@ -12,7 +15,12 @@ class Post extends Model
         return $posts;
     }
 
-    // Pour afficher le contenu d'un post
+    /**
+     * Pour afficher le contenu d'un post
+     * @param $postId
+     * @return mixed
+     * @throws Exception
+     */
     public function getPost($postId)
     {
         $sql = 'SELECT title, content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM post WHERE id = ?';
