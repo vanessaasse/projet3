@@ -23,7 +23,7 @@ class Routeur
                 if ($_GET['action'] == 'post') {
                     if (isset($_GET['id'])) {
                         if ($_GET['id'] != 0) {
-                            $this->postCtl->post($postId);
+                            $this->postCtl->post();
                         } else
                             throw new Exception("Identifiant de post non valide");
                     } else

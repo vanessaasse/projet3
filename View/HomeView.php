@@ -2,7 +2,7 @@
 
 <?php foreach ($posts as $post): ?>
 
-    <a href="<?= "index.php?action=post&id=" . $post['id'] ?>">
+    <a href="index.php?action=Post&amp;id=<?= $post['id'] ?>">
 <?= $post['title'] ?>
     </a>
 <?= $post['date_fr'] ?><br />

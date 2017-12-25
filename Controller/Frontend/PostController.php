@@ -16,11 +16,11 @@ class PostController
     }
 
     //Affiche les détails d'un post
-    public function post($postId)
+    public function post()
     {
-        $post = $this->post->getPost($postId);
-        $comments = $this->comment->getComments($postId);
+        $post = $this->post->getPost($_GET['id']);
+        $comments = $this->comment->getComments($_GET['id']);
         $view = new View("Post");
-        $view->build(array('post' => $post, 'comments' => $comments));
+        $view->build(array('post' => $this->post, 'comments' => $comments));
     }
 }
