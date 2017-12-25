@@ -24,7 +24,7 @@ class View
         // Générer la partie spécifique à la vue
         $content = $this->buildFile($this->file, $datas);
         // Générer la vue spécifique au gabarit
-        $view = $this->buildFile('View/Template.php', array('title' => $this->$title, 'content' => $content));
+        $view = $this->buildFile('View/Template.php', array('title' => $this->title, 'content' => $content));
         // renvoie la vue au navigateur
         echo $view;
     }
@@ -52,7 +52,7 @@ class View
         }
         else
         {
-            throw new Exception('Ficher ' . $file . ' introuvable.');
+            throw new Exception('Fichier ' . $file . ' introuvable.');
         }
     }
 

@@ -32,7 +32,7 @@ abstract class Model // une classe abstraite ne peut pas être instanciée, pas 
         {
             $this->db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8','root', 'root',
             array (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION));
-            return $this->db;
         }
+        return $this->db;
     }
 }

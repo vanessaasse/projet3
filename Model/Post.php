@@ -33,7 +33,7 @@ class Post extends Model
 
         else
         {
-            throw new Exception('Aucun billet ne correspond à l\'identifiant suivant : ' .$post . '.<br/>');
+            throw new Exception('Aucun billet ne correspond à l\'identifiant suivant : ' .$postId . '.<br/>');
         }
     }
 
