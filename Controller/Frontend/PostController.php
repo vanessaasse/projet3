@@ -11,16 +11,16 @@ class PostController
 
     public function __construct()
     {
-        $this->post = new Post;
-        $this->comment = new Comment;
+        $this->post = new Post();
+        $this->comment = new Comment();
     }
 
     //Affiche les détails d'un post
-    public function post()
+    public function post($postId)
     {
-        $post = $this->post->getPost($_GET['id']);
-        $comments = $this->comment->getComments($_GET['id']);
+        $post = $this->post->getPost($postId);
+        $comments = $this->comment->getComments($postId);
         $view = new View("Post");
-        $view->build(array('post' => $this->post, 'comments' => $comments));
+        $view->build(array('post' => $post, 'comments' => $comments));
     }
 }

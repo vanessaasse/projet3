@@ -21,14 +21,14 @@ class Routeur
         try {
             if (isset($_GET['action'])) {
                 if ($_GET['action'] == 'post') {
-                    if (isset($_GET['id'])) {
-                        if ($_GET['id'] != 0) {
-                            $this->postCtl->post();
-                        } else
+                    $postId = intval($this->getParameter($_GET, 'id'));
+                    if ($postId != 0) {
+                        $this->postCtl->post($postId);
+                    }
+                    else
                             throw new Exception("Identifiant de post non valide");
-                    } else
-                        throw new Exception("Identifiant de billet non défini");
-                } else
+                }
+                else
                     throw new Exception("Action non valide");
             } else
                 $this->homeCtl->home();
@@ -45,5 +45,14 @@ class Routeur
     {
         $view = new View ("Error");
         $view->build(array('errorMessage' => $errorMessage));
+    }
+
+    // Recherche un paramètre dans un tableau
+    private function getParameter($tableau, $nom) {
+        if (isset($tableau[$nom])) {
+            return $tableau[$nom];
+        }
+        else
+            throw new Exception("Paramètre '$nom' absent");
     }
 }

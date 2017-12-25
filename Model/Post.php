@@ -26,7 +26,7 @@ class Post extends Model
         $sql = 'SELECT title, content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM post WHERE id = ?';
         $post = $this->executeRequest($sql, array($postId));
 
-        if($post->rowCount() == 1) // RowCount retourne le nombre de lignes affectées par le dernier appel à la fonction PDOStatement
+        if($post->rowCount() > 0) // RowCount retourne le nombre de lignes affectées par le dernier appel à la fonction PDOStatement
         {
             return $post->fetch(); // Accès à la 1e ligne de résultat
         }
