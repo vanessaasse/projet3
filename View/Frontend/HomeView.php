@@ -2,7 +2,7 @@
 
 <?php foreach ($posts as $post) ?>
 
-<a href="<?= "index.php?action=post&id=" . $post['id'] ?>">
+<a href="<?= "Routeur.php?action=post&id=" . $post['id'] ?>">
     <?= $post['title'] ?>
 </a>
 <?= $post['date'] ?><br />

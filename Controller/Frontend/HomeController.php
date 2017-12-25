@@ -10,7 +10,7 @@ class HomeController
 
     public function __construct()
     {
-        $this->post = new post();
+        $this->post = new Post();
     }
 
     // Affiche la liste de tous les posts
