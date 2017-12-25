@@ -10,7 +10,7 @@ class View
     public function __construct($action) // paramètre action pour activer la commande
     {
         // détermination du nom du fichier vue à partir de l'action
-        $this->file = 'View/' . $action . 'View.php';
+        $this->file = "View/" . $action . "View.php";
     }
 
 
@@ -24,7 +24,7 @@ class View
         // Générer la partie spécifique à la vue
         $content = $this->buildFile($this->file, $datas);
         // Générer la vue spécifique au gabarit
-        $view = $this->buildFile('View/Template.php', array('title' => $this-> $title, 'content' => $content));
+        $view = $this->buildFile('View/Template.php', array('title' => $this->$title, 'content' => $content));
         // renvoie la vue au navigateur
         echo $view;
     }
