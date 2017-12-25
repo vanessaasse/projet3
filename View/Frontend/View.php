@@ -13,7 +13,12 @@ class View
         $this->file = 'View/' . $action . 'View.php';
     }
 
-    //Construction et mise en tampon de la vue
+
+    /**
+     * Construction et mise en tampon de la vue
+     * @param $datas
+     * @throws Exception
+     */
     public function build($datas)
     {
         // Générer la partie spécifique à la vue
@@ -24,7 +29,14 @@ class View
         echo $view;
     }
 
-    // Génère un fichier vue et renvoie le résultat produit
+
+    /**
+     * Génère un fichier vue et renvoie le résultat produit
+     * @param $file
+     * @param $datas
+     * @return string
+     * @throws Exception
+     */
     public function buildFile($file, $datas)
     {
         if(file_exists($file))
@@ -37,6 +49,10 @@ class View
             require $file;
             // arrêt de la temporisation des données et affichage
             return ob_get_clean();
+        }
+        else
+        {
+            throw new Exception('Ficher ' . $file . ' introuvable.');
         }
     }
 
