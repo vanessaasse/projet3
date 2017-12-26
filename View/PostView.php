@@ -2,7 +2,7 @@
 
 
 <?= htmlspecialchars($post['title']) ?><br />
-<?= $post['date_fr'] ?><br />
+Publié le <?= $post['date_fr'] ?><br />
 
 <p><?= htmlspecialchars($post['content']) ?></p>
 
@@ -12,8 +12,12 @@ Commentaires à <?= $post['title'] ?><br />
 
 <?php foreach ($comments as $comment): ?>
 
-    <p><?= htmlspecialchars($comment['author']) ?> dit :</p>
+    <?= htmlspecialchars($comment['author']) ?> :<br />
+    Le <?= htmlspecialchars($comment['date_fr']) ?>
     <p><?= htmlspecialchars($comment['com_content']) ?></p>
+
+
+
 <?php endforeach; ?>
 
 
@@ -25,8 +29,8 @@ Commentaires à <?= $post['title'] ?><br />
         <input type="text" name="name" size="53" max="256" required ></td></tr>
         <tr><td><label>Commentaire : </label></td><td>
         <textarea name="newcomment" cols="51" rows="5" required ></textarea></td></tr>
+        <tr><td><input type="hidden" name="id" value="<?= $_GET['id'] ?>"</td></tr>
         <tr><td><input type="submit" value="Envoyez votre message" /></td></tr>
         </table>
     </fieldset>
 </form>
-

@@ -34,12 +34,12 @@ class PostController
 
 
     //Ajoute un nouveau commentaire dans un post
-    public function addcomment($postId, $author, $comcontent)
+    public function addcomment($com_postId, $author, $comcontent)
     {
         // Sauvegarde du commentaire
-        $this->comment->postComment($postId, $author, $comcontent); // va chercher la méthode dans le model Comment.php l.25
+        $this->comment->postComment($com_postId, $author, $comcontent); // va chercher la méthode dans le model Comment.php l.25
         // Actualisation de l'affichage de billet. Donc pas de génération de nouvelle vue
-        $this->post($postId);
+        $this->post($_GET['id']);
 
     }
 }

@@ -22,9 +22,9 @@ class Comment extends Model
      * @param $comcontent
      * @param $postId
      */
-    public function postComment($postId, $author, $comcontent) {
+    public function postComment($com_postId, $author, $comcontent) {
         $sql = 'INSERT INTO comment(post_id, author, com_content, date)' . ' values(?, ?, ?, NOW())';
-        $comment = $this->executeRequest($sql, array($postId, $author, $comcontent));
+        $comment = $this->executeRequest($sql, array($com_postId, $author, $comcontent));
         return $comment;
     }
 }

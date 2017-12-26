@@ -38,10 +38,10 @@ class Routeur
 
                     elseif ($_GET['action'] == 'Addcomment')
                     {
-                        $postId = $this->getParameter($_POST, 'id');
-                        $author = $this->getParameter($_POST, 'name');
-                        $comcontent = $this->getParameter($_POST, 'newcomment');
-                        $this->postCtl->addcomment($postId, $author, $comcontent); // appelle la méthode dans le PostController l. 37
+                        $com_postId = $this->getParameter($_GET, 'id'); // relié au formulaire de PostView l.29
+                        $author = $this->getParameter($_POST, 'name'); // relié au formulaire de PostView l.26
+                        $comcontent = $this->getParameter($_POST, 'newcomment'); // relié au formulaire de PostView l.28
+                        $this->postCtl->addcomment($com_postId, $author, $comcontent); // appelle la méthode dans le PostController l. 37
 
                     }
                 else
