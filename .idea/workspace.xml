@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f74f8414-cfc8-42ef-8269-882219093a75" name="Default" comment="Modification de HomeView.php">
-      <change beforePath="" afterPath="$PROJECT_DIR$/View/ChaptersView.php" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/Controller/Frontend/HomeController.php" afterPath="$PROJECT_DIR$/Controller/Frontend/HomeController.php" />
-      <change beforePath="$PROJECT_DIR$/Controller/Frontend/PostController.php" afterPath="$PROJECT_DIR$/Controller/Frontend/PostController.php" />
-      <change beforePath="$PROJECT_DIR$/Controller/Routeur.php" afterPath="$PROJECT_DIR$/Controller/Routeur.php" />
-      <change beforePath="$PROJECT_DIR$/Model/Post.php" afterPath="$PROJECT_DIR$/Model/Post.php" />
-      <change beforePath="$PROJECT_DIR$/View/HomeView.php" afterPath="$PROJECT_DIR$/View/HomeView.php" />
       <change beforePath="$PROJECT_DIR$/View/PostView.php" afterPath="$PROJECT_DIR$/View/PostView.php" />
-      <change beforePath="$PROJECT_DIR$/View/Template.php" afterPath="$PROJECT_DIR$/View/Template.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,8 +55,8 @@
       <file leaf-file-name="Post.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model/Post.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="30" />
+            <state relative-caret-position="298">
+              <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
               <folding>
                 <marker date="1514298711000" expanded="true" signature="163:271" ph="SELECT id, t... post" />
                 <marker date="1514298711000" expanded="true" signature="484:577" ph="SELECT post_... post" />
@@ -86,7 +79,7 @@
       <file leaf-file-name="PostController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Controller/Frontend/PostController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
+            <state relative-caret-position="-122">
               <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
               <folding />
             </state>
@@ -106,8 +99,8 @@
       <file leaf-file-name="PostView.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/View/PostView.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="225">
+              <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
               <folding />
             </state>
           </provider>
@@ -158,10 +151,10 @@
         <option value="$PROJECT_DIR$/Model/Post.php" />
         <option value="$PROJECT_DIR$/View/Template.php" />
         <option value="$PROJECT_DIR$/View/HomeView.php" />
-        <option value="$PROJECT_DIR$/View/PostView.php" />
         <option value="$PROJECT_DIR$/View/ChaptersView.php" />
         <option value="$PROJECT_DIR$/Controller/Frontend/PostController.php" />
         <option value="$PROJECT_DIR$/Controller/Routeur.php" />
+        <option value="$PROJECT_DIR$/View/PostView.php" />
       </list>
     </option>
   </component>
@@ -319,12 +312,12 @@
       <workItem from="1514133166352" duration="1207000" />
       <workItem from="1514134497937" duration="6949000" />
       <workItem from="1514217869511" duration="17109000" />
-      <workItem from="1514287791491" duration="9752000" />
+      <workItem from="1514287791491" duration="10456000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39450000" />
+    <option name="totallyTimeSpent" value="40154000" />
   </component>
   <component name="TodoView" selected-index="2">
     <todo-panel id="selected-file">
@@ -348,9 +341,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29748604" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32960895" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24980299" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.325419" sideWeight="0.49743214" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.325419" sideWeight="0.49743214" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.13850616" sideWeight="0.5139535" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39944133" sideWeight="0.4960116" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39944133" sideWeight="0.4960116" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3297546" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -630,31 +623,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Controller/Frontend/PostController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Controller/Frontend/HomeController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model/Post.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="20" lean-forward="false" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="30" />
-          <folding>
-            <marker date="1514298711000" expanded="true" signature="163:271" ph="SELECT id, t... post" />
-            <marker date="1514298711000" expanded="true" signature="484:577" ph="SELECT post_... post" />
-            <marker date="1514298711000" expanded="true" signature="841:929" ph="SELECT post_... post" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -674,6 +647,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Model/Post.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="46" column="5" lean-forward="true" selection-start-line="46" selection-start-column="5" selection-end-line="46" selection-end-column="5" />
+          <folding>
+            <marker date="1514298711000" expanded="true" signature="163:271" ph="SELECT id, t... post" />
+            <marker date="1514298711000" expanded="true" signature="484:577" ph="SELECT post_... post" />
+            <marker date="1514298711000" expanded="true" signature="841:929" ph="SELECT post_... post" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Controller/Frontend/PostController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-122">
+          <caret line="3" column="14" lean-forward="false" selection-start-line="3" selection-start-column="14" selection-end-line="3" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Controller/Routeur.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -684,8 +677,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/View/PostView.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+        <state relative-caret-position="225">
+          <caret line="15" column="42" lean-forward="false" selection-start-line="15" selection-start-column="42" selection-end-line="15" selection-end-column="42" />
           <folding />
         </state>
       </provider>
