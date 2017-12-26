@@ -17,15 +17,15 @@ class Comment extends Model
 
 
     /**
-     * Ajouter un comment dans un post via le formulaire présent dans PostView.php
+     * Permet l'enregistrement d'un nv commentaire lors d'une saisie dans le formulaire présent dans PostView.php
      * @param $author
-     * @param $com_content
+     * @param $comcontent
      * @param $postId
      */
-    public function NewComment($author, $com_content, $postId) {
-        $sql = 'insert into comment(date, author, com_content, id)' . ' values(?, ?, ?, ?)';
-        $date = date(DATE_W3C);  // Récupère la date courante
-        $this->executeRequest($sql, array($date, $author, $com_content, $postId));
+    public function postComment($postId, $author, $comcontent) {
+        $sql = 'INSERT INTO comment(post_id, author, com_content, date)' . ' values(?, ?, ?, NOW())';
+        $comment = $this->executeRequest($sql, array($postId, $author, $comcontent));
+        return $comment;
     }
 }
 

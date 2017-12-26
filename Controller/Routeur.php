@@ -27,14 +27,23 @@ class Routeur
                 }
 
                     // afficher le post en entier dans postView
-                elseif ($_GET['action'] == 'Post') {
-                    $postId = intval($this->getParameter($_GET, 'id'));
-                    if ($postId != 0) {
-                        $this->postCtl->post($postId);
+                    elseif ($_GET['action'] == 'Post') {
+                        $postId = intval($this->getParameter($_GET, 'id'));
+                        if ($postId != 0) {
+                            $this->postCtl->post($postId);
+                        }
+                        else
+                                throw new Exception("Identifiant de post non valide");
                     }
-                    else
-                            throw new Exception("Identifiant de post non valide");
-                }
+
+                    elseif ($_GET['action'] == 'Addcomment')
+                    {
+                        $postId = $this->getParameter($_POST, 'id');
+                        $author = $this->getParameter($_POST, 'name');
+                        $comcontent = $this->getParameter($_POST, 'newcomment');
+                        $this->postCtl->addcomment($postId, $author, $comcontent); // appelle la méthode dans le PostController l. 37
+
+                    }
                 else
                     throw new Exception("Action non valide");
             } else
