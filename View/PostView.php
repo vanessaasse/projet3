@@ -17,7 +17,7 @@ Commentaires à <?= $post['title'] ?><br />
 <?php endforeach; ?>
 
 
-<form method="post" action="index.php?action=addcomment">
+<form method="post" action="index.php?action=Addcomment">
     <fieldset>
         <legend>Ajouter un commentaire :</legend>
         <table>
