@@ -20,7 +20,14 @@ class Routeur
     {
         try {
             if (isset($_GET['action'])) {
-                if ($_GET['action'] == 'post') {
+
+                    // afficher l'ensemble des chapitres dans ChaptersView
+                if ($_GET['action'] == 'Chapters') {
+                    $this->postCtl->chapters();
+                }
+
+                    // afficher le post en entier dans postView
+                elseif ($_GET['action'] == 'Post') {
                     $postId = intval($this->getParameter($_GET, 'id'));
                     if ($postId != 0) {
                         $this->postCtl->post($postId);

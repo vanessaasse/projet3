@@ -17,7 +17,7 @@ class HomeController
     public function home()
     {
         //va chercher la méthode getPosts dans le modele/class Post l.11 et va chercher la méthode Build l.25 dans la vue View.php
-        $posts = $this->post->getPosts();
+        $posts = $this->post->lastPost();
         // détermine la nouvelle vue en fonction de l'action. En lien avec la méthode __construct($action) de la View.php l.13
         $view = new View("Home");
         $view->build(array('posts' => $posts));

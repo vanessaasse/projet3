@@ -1,10 +1,10 @@
 <?php $this->title = "Billet simple pour l\'Alaska' - " . $post['titre']; ?>
 
 
-<?= $post['titre'] ?><br />
+<?= htmlspecialchars($post['titre']) ?><br />
 <?= $post['date_fr'] ?><br />
 
-<p><?= $post['content'] ?></p>
+<p><?= htmlspecialchars($post['content']) ?></p>
 
 <hr />
 
@@ -12,8 +12,8 @@ Commentaires à <?= $post['titre'] ?><br />
 
 <?php foreach ($comments as $comment): ?>
 
-    <p><?= $comment['auteur'] ?> dit :</p>
-    <p><?= $comment['contenu'] ?></p>
+    <p><?= htmlspecialchars($comment['auteur']) ?> dit :</p>
+    <p><?= htmlspecialchars($comment['contenu']) ?></p>
 <?php endforeach; ?>
 
 <hr />

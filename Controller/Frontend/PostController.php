@@ -15,6 +15,14 @@ class PostController
         $this->comment = new Comment();
     }
 
+    // pour afficher la liste des chapitres dans ChapterView
+    function chapters()
+    {
+        $posts = $this->post->getPosts();
+        $view = new View("Chapters");
+        $view->build(array('posts' => $posts));
+    }
+
     //Affiche les détails d'un post
     public function post($postId)
     {

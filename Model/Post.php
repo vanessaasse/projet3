@@ -4,6 +4,15 @@ require_once 'Model.php';
 
 class Post extends Model
 {
+    // Pour afficher le dernier chapitre en Home
+    public function lastPost()
+    {
+        $sql = 'SELECT id, title, content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM post ORDER BY date DESC LIMIT 0,1';
+        $posts = $this->executeRequest($sql);
+        return $posts;
+    }
+
+
     /**
      * Pour afficher tous les posts
      * @return PDOStatement
