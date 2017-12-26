@@ -2,10 +2,11 @@
 
 <?php foreach ($posts as $post): ?>
 
+
     <a href="index.php?action=Post&amp;id=<?= $post['id'] ?>">
-<?= $post['title'] ?>
+        <?= $post['title'] ?>
     </a>
-<?= $post['date_fr'] ?><br />
+    <?= $post['date_fr'] ?><br />
     <p><?= $post['content'] ?></p>
 
     <hr />
