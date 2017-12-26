@@ -1,4 +1,4 @@
-<?php $this->title = 'Billet pour l\'Alaska'; ?>
+<?php $this->title = "Billet pour l'Alaska"; ?>
 
 <?php foreach ($posts as $post): ?>
 

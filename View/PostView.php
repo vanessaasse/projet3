@@ -1,4 +1,4 @@
-<?php $this->title = "Billet simple pour l\'Alaska"; ?>
+<?php $this->title = "Billet simple pour l'Alaska"; ?>
 
 
 <?= htmlspecialchars($post['title']) ?><br />
