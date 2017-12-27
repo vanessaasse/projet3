@@ -1,7 +1,7 @@
 <?php
 
-require_once 'Frontend/PostController.php';
-require_once 'Frontend/HomeController.php';
+require_once 'PostController.php';
+require_once 'HomeController.php';
 require_once 'View/View.php';
 
 class Routeur
