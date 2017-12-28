@@ -2,21 +2,23 @@
 
 // dans cette classe, on se connecte à la BDD
 
+require_once 'Framework/Configuration.php';
+
 abstract class Model // une classe abstraite ne peut pas être instanciée, pas de création d'objet
 {
-    private $db; // attribut pour se connecter à la base de données
-
+    private static $db; // attribut pour se connecter à la base de données
+    // Static >> On ne crée qu'une instance de la class PDO partagée par les classes dérivées de Model.
 
 
     protected function executeRequest ($sql, $params = null)
     {
         if($params == null)
         {
-            $result = $this->getDb()->query($sql); // execution directe
+            $result = self::getDb()->query($sql); // execution directe
         }
         else
         {
-            $result = $this->getDb()->prepare($sql); // requête préparée
+            $result = self::getDb()->prepare($sql); // requête préparée
             $result->execute($params);
         }
 
@@ -26,13 +28,19 @@ abstract class Model // une classe abstraite ne peut pas être instanciée, pas 
 
 
 //  fonction privée, uniquement attachée à cette classe
-    private function getDb()
+    private static function getDb()
     {
-        if($this->db == null)
+        if(self::$db === null)
         {
-            $this->db = new PDO('mysql:host=localhost;dbname=projet;charset=utf8','root', 'root',
-            array (PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION));
+            // Récupération des paramètres de configuration BD - dans dossier Config
+            $dsn = Configuration::get("dsn");
+            $login = Configuration::get("login");
+            $password = Configuration::get("password");
+
+            // Création de la connexion à la base de données
+            self::$db = new PDO($dsn, $login, $password,
+            array (PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
-        return $this->db;
+        return $db;
     }
 }

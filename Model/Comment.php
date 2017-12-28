@@ -17,7 +17,7 @@ class Comment extends Model
 
 
     /**
-     * Permet l'enregistrement d'un nv commentaire lors d'une saisie dans le formulaire présent dans PostView.php
+     * Permet l'enregistrement d'un nv commentaire lors d'une saisie dans le formulaire présent dans Post.php
      * @param $author
      * @param $comcontent
      * @param $postId

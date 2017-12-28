@@ -3,7 +3,7 @@
 require_once 'Model/Post.php';
 require_once 'View/View.php';
 
-class HomeController
+class ControllerHome
 {
     private $post;
 

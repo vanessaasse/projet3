@@ -4,7 +4,7 @@ require_once 'Model/Post.php';
 require_once 'Model/Comment.php';
 require_once 'View/View.php';
 
-class PostController
+class ControllerPost
 {
     private $post;
     private $comment;
@@ -28,7 +28,7 @@ class PostController
     {
         $post = $this->post->getPost($postId); // va chercher la méthode GetPost($postId) dans le model Post.php l.33
         $comments = $this->comment->getComments($postId); // va chercher la méthode GetComments($postId) dans le model Comment.php l.11
-        $view = new View("Post"); // Création d'un nouveau fichier vue PostView.php
+        $view = new View("Post"); // Création d'un nouveau fichier vue Post.php
         $view->build(array('post' => $post, 'comments' => $comments));
     }
 
