@@ -87,7 +87,8 @@ class View
      * @param string $value Valeur à nettoyer
      * @return string Valeur nettoyée
      */
-    private function clean($value) {
-        return htmlspecialchars($value, ENT_QUOTES, 'UTF-8', false);
+    private function sanitize($value) {
+        return htmlspecialchars($value, ENT_QUOTES, 'UTF-8', false); /* pour protéger le site
+ des failles XSS - envoi de codes dans les pages web - et d'injection SQL - envoi de données non attendues dans la BDD. */
     }
 }

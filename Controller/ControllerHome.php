@@ -1,9 +1,9 @@
 <?php
 
+require_once 'Framework/Controller.php';
 require_once 'Model/Post.php';
-require_once 'View/View.php';
 
-class ControllerHome
+class ControllerHome extends Controller
 {
     private $post;
 
@@ -13,13 +13,16 @@ class ControllerHome
         $this->post = new Post();
     }
 
-    // Affiche la liste de tous les posts
-    public function home()
+    /*
+    Affiche le dernier post publié sur le site
+    Appelle la methode abstraite index() du controller.php l.36. Cette méthode oblige les classes dérivées
+    à implémenter cette action par défaut
+    */
+    public function index()
     {
-        //va chercher la méthode getPosts dans le modele/class Post l.11 et va chercher la méthode Build l.25 dans la vue View.php
+        //va chercher la méthode lasPost dans le model/Post.php l.8
         $posts = $this->post->lastPost();
-        // détermine la nouvelle vue en fonction de l'action. En lien avec la méthode __construct($action) de la View.php l.13
-        $view = new View("Home");
-        $view->build(array('posts' => $posts));
+        // détermine la nouvelle vue. Appelle la protected function BuildView du controller.php l.40
+        $this->buildView(array('posts' => $posts));
     }
 }

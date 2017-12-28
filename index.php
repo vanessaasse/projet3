@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Controller/Routeur.php';
+require_once 'Framework/Routeur.php';
 
 $routeur = new routeur();
-$routeur->request();
+$routeur->pathRequest();

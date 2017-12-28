@@ -34,7 +34,7 @@ abstract class Controller
 
     // Méthode abstraite correspondant à l'action par défaut
     // Oblige les classes dérivées à implémenter cette action par défaut
-    public abstract index();
+    public abstract function index();
 
     // Génère la vue associée au controller courant
     protected function buildView($dataView = array())

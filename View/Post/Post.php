@@ -1,20 +1,20 @@
 <?php $this->title = "Billet simple pour l'Alaska"; ?>
 
 
-<?= htmlspecialchars($post['title']) ?><br />
-Publié le <?= $post['date_fr'] ?><br />
+<?= $this->sanitize($post['title']) ?><br />
+Publié le <?= $this->sanitize($post['date_fr']) ?><br />
 
-<p><?= htmlspecialchars($post['content']) ?></p>
+<p><?= $this->sanitize($post['content']) ?></p>
 
 <hr />
 
-Commentaires à <?= $post['title'] ?><br />
+Commentaires à <?= $this->sanitize($post['title']) ?><br />
 
 <?php foreach ($comments as $comment): ?>
 
-    <?= htmlspecialchars($comment['author']) ?> :<br />
-    Le <?= htmlspecialchars($comment['date_fr']) ?>
-    <p><?= htmlspecialchars($comment['com_content']) ?></p>
+    <?= $this->sanitize($comment['author']) ?> :<br />
+    Le <?= $this->sanitize($comment['date_fr']) ?>
+    <p><?= $this->sanitize($comment['com_content']) ?></p>
 
 
 
