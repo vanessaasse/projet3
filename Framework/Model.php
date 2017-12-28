@@ -2,7 +2,7 @@
 
 // dans cette classe, on se connecte à la BDD
 
-require_once 'Framework/Configuration.php';
+require_once 'Configuration.php';
 
 abstract class Model // une classe abstraite ne peut pas être instanciée, pas de création d'objet
 {
@@ -41,6 +41,6 @@ abstract class Model // une classe abstraite ne peut pas être instanciée, pas 
             self::$db = new PDO($dsn, $login, $password,
             array (PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
-        return $db;
+        return self::$db;
     }
 }

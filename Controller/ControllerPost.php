@@ -17,7 +17,7 @@ class ControllerPost extends Controller
 
     // pour afficher la liste des chapitres dans ChapterView
     // Appelle la methode abstraite index() du controller.php l.36.
-    function index()
+    public function index()
     {
         $posts = $this->post->getPosts(); // va chercher la méthode getPosts dans le model Post.php l.20
         $this->buildView(array('posts' => $posts));
@@ -38,9 +38,9 @@ class ControllerPost extends Controller
     //Ajoute un nouveau commentaire dans un post
     public function addcomment()
     {
-        $com_postId = $this->request->getParameters("post_id");
-        $author = $this->request->getParameters("author");
-        $com_content = $this->request->getParameters("com_content");
+        $com_postId = $this->request->getParameter("post_id");
+        $author = $this->request->getParameter("author");
+        $comcontent = $this->request->getParameter("com_content");
 
         // Sauvegarde du commentaire
         $this->comment->postComment($com_postId, $author, $comcontent); // va chercher la méthode dans le model Comment.php l.25

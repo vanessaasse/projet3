@@ -32,17 +32,15 @@ class Routeur
     // Crée le contrôleur approprié en fonction de la requête reçue
     private function createController(Request $request)
     {
-        $controller = "Home"; // Contrôleur par défaut
+        $controller = "ControllerHome"; // Contrôleur par défaut
 
         if ($request->parameterExist('controller')) {
-            $controller = $request->getParameter('controller');
-            // Première lettre en majuscule
-            $controller = ucfirst(strtolower($controller));
+            $controller = $request->getParameter('Controller');
         }
 
         // Création du nom du fichier du contrôleur
-        $classController = "Home" . $controller;
-        $fileController = "Home/" . $classController . ".php";
+        $classController = "Controller" . $controller;
+        $fileController = "Controller/" . $classController . ".php";
         if (file_exists($fileController)) {
             // Instanciation du controller adapté à la requête
             require ($fileController);
