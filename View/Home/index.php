@@ -4,9 +4,8 @@
 
 <?php foreach ($posts as $post): ?>
 
-    <a href="<?= "Post/Post/" . $this->sanitize($post['id']) ?>">
-    <?= $this->sanitize($post['title']) ?>
-    publié le <?= $this->sanitize($post['date_fr']) ?>
+    <?= $this->sanitize($post['title']) ?><br />
+    Publié le <?= $this->sanitize($post['date_fr']) ?>
 
     <p>
         <?= $this->sanitize($post['content']) ?>
