@@ -20,13 +20,10 @@ abstract class Controller
     // Exécute l'action à réaliser
     public function executeAction($action)
     {
-        if(method_exists($this, $action))
-        {
+        if (method_exists($this, $action)) {
             $this->action = $action;
             $this->{$this->action}();
-        }
-        else
-        {
+        } else {
             $classController = get_class($this);
             throw new Exception("Action '$action' non définie dans la classe $classController");
         }
@@ -47,3 +44,4 @@ abstract class Controller
         $view->build($dataView);
     }
 }
+
