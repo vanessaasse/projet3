@@ -2,5 +2,5 @@
 
 require_once 'Framework/Routeur.php';
 
-$routeur = new routeur();
+$routeur = new Routeur();
 $routeur->pathRequest();

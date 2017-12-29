@@ -13,7 +13,7 @@
         <br />
     </p>
 
-    <a href="index.php?action=index">Découvrez les précédents chapitres !</a>
+    <a href="post/index">Découvrez les précédents chapitres !</a>
 
     <hr />
 

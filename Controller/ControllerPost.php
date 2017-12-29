@@ -36,11 +36,11 @@ class ControllerPost extends Controller
 
 
     //Ajoute un nouveau commentaire dans un post
-    public function addcomment()
+    public function addComment()
     {
-        $com_postId = $this->request->getParameter("post_id");
-        $author = $this->request->getParameter("author");
-        $comcontent = $this->request->getParameter("com_content");
+        $com_postId = $this->request->getParameter("id"); // reprend l'id de l'url
+        $author = $this->request->getParameter("name"); // name dans le formulaire
+        $comcontent = $this->request->getParameter("comment"); // content dans le formulaire
 
         // Sauvegarde du commentaire
         $this->comment->postComment($com_postId, $author, $comcontent); // va chercher la méthode dans le model Comment.php l.25

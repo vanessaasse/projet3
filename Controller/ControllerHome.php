@@ -21,8 +21,9 @@ class ControllerHome extends Controller
     public function index()
     {
         //va chercher la méthode lasPost dans le model/Post.php l.8
-        $posts = $this->post->lastPost();
+       $posts = $this->post->lastPost();
         // détermine la nouvelle vue. Appelle la protected function BuildView du controller.php l.40
-        $this->buildView(array('posts' => $posts));
+       $this->buildView(array('posts' => $posts));
+
     }
 }

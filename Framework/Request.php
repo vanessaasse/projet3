@@ -26,10 +26,11 @@ class Request
     {
         if ($this->parameterExist($name))
         {
-            return $this->parameters['$name'];
+            return $this->parameters[$name];
         }
         else
             throw new Exception("Paramètre ' $name ' absent de la requête.");
     }
+
 
 }

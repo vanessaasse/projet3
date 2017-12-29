@@ -38,7 +38,7 @@ abstract class Controller
     {
         // Détermination du nom du fichier vue à partir du nom du controller actuel
         $classController = get_class($this); // get_class retourne le nom de la classe d'un objet
-        $classController = str_replace("Controller", "", $classController);
+        $controller = str_replace("Controller", "", $classController);
         //Instanciation et génération de la vue
         $view = new View($this->action, $controller);
         $view->build($dataView);

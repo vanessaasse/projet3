@@ -16,7 +16,7 @@ class View
      * @param string $action Action à laquelle la vue est associée
      * @param string $controller Nom du contrôleur auquel la vue est associée
      */
-    public function __construct($action, $controleur = "")
+    public function __construct($action, $controller = "")
     {
         // Détermination du nom du fichier vue à partir de l'action et du constructeur
         // La convention de nommage des fichiers vues est : View/<$controller>/<$action>.php

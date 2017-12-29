@@ -13,13 +13,13 @@ class Configuration
      */
     public static function get($name, $defaultvalue = null) // Comme la méthode est statique, elle ne peut être utilisée qu'une fois, ne peut pas instancier la class Configuration
     {
-        if(isset(self::getParameters()['$name'])) // self:: fait référence à un membre static
+        if(isset(self::getParameters()[$name])) // self:: fait référence à un membre static
         {
-            $value = self::getParameters()['$name'];
+            $value = self::getParameters()[$name];
         }
         else
         {
-            $valeur = $defaultvalue;
+            $value = $defaultvalue;
         }
 
         return $value;

@@ -16,6 +16,7 @@ class Routeur
             // array_merge fusionne plusieurs tableaux en un seul
             $request = new Request(array_merge($_GET, $_POST));
 
+            /** @var Controller $controller */
             $controller = $this->createController($request);
             $action = $this->createAction($request);
 
@@ -32,11 +33,14 @@ class Routeur
     // Crée le contrôleur approprié en fonction de la requête reçue
     private function createController(Request $request)
     {
-        $controller = "ControllerHome"; // Contrôleur par défaut
+        $controller = "Home"; // Contrôleur par défaut
 
         if ($request->parameterExist('controller')) {
-            $controller = $request->getParameter('Controller');
+            $controller = $request->getParameter('controller');
+            $controller = ucfirst(strtolower($controller));
         }
+
+
 
         // Création du nom du fichier du contrôleur
         $classController = "Controller" . $controller;
