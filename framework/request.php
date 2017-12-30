@@ -1,8 +1,9 @@
 <?php
 
 
-// Modelise la requête
-// Au début du routage (routeur.php), un object Request est instancié afin de stocker les paramètres de la requête reçue.
+/*  Cette classe modelise une requête
+    Le seul attribut de cette classe ($parameters) est un tableau associatif rassemblant les paramètres de la requête.
+    Au début du routage (routeur.php), un object Request est instancié afin de stocker les paramètres de la requête reçue. */
 
 class Request
 {

@@ -14,7 +14,7 @@ class Routeur
             // Instancie la class request.php
             // On reçoit les paramètres de la requête via GET et POST
             // array_merge fusionne plusieurs tableaux en un seul
-            $request = new Request(array_merge($_GET, $_POST));
+            $request = new Request(array_merge($_GET, $_POST)); // nouvel objet de la class Request
 
             /** @var Controller $controller */
             $controller = $this->createController($request);

@@ -11,7 +11,8 @@ class Configuration
      * @param null $defaultvalue
      * @return mixed
      */
-    public static function get($name, $defaultvalue = null) // Comme la méthode est statique, elle ne peut être utilisée qu'une fois, ne peut pas instancier la class Configuration
+    public static function get($name, $defaultvalue = null) /* Comme la méthode est statique, elle ne peut être utilisée
+ qu'une fois, ne peut pas instancier la class Configuration */
     {
         if(isset(self::getParameters()[$name])) // self:: fait référence à un membre static
         {

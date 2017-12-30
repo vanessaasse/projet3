@@ -6,8 +6,9 @@ require_once 'configuration.php';
 
 abstract class Model // une classe abstraite ne peut pas être instanciée, pas de création d'objet
 {
-    private static $db; // attribut pour se connecter à la base de données
-    // Static >> On ne crée qu'une instance de la class PDO partagée par les classes dérivées de model.
+    private static $db; /* attribut pour se connecter à la base de données
+    Static >> On ne crée qu'une instance de la class PDO partagée par les classes dérivées du model.
+    Ainsi, l'opération de connexion à la base de données ne sera réalisée qu'une seule fois. */
 
 
     protected function executeRequest ($sql, $params = null)
