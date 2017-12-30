@@ -2,12 +2,12 @@
 
 // dans cette classe, on se connecte à la BDD
 
-require_once 'Configuration.php';
+require_once 'configuration.php';
 
 abstract class Model // une classe abstraite ne peut pas être instanciée, pas de création d'objet
 {
     private static $db; // attribut pour se connecter à la base de données
-    // Static >> On ne crée qu'une instance de la class PDO partagée par les classes dérivées de Model.
+    // Static >> On ne crée qu'une instance de la class PDO partagée par les classes dérivées de model.
 
 
     protected function executeRequest ($sql, $params = null)
@@ -32,7 +32,7 @@ abstract class Model // une classe abstraite ne peut pas être instanciée, pas 
     {
         if(self::$db === null)
         {
-            // Récupération des paramètres de configuration BD - dans dossier Config
+            // Récupération des paramètres de configuration BD - dans dossier config
             $dsn = Configuration::get("dsn");
             $login = Configuration::get("login");
             $password = Configuration::get("password");

@@ -1,6 +1,6 @@
 <?php
 
-require_once 'Framework/Model.php';
+require_once 'framework/model.php';
 
 class Comment extends Model
 {
@@ -17,7 +17,7 @@ class Comment extends Model
 
 
     /**
-     * Permet l'enregistrement d'un nv commentaire lors d'une saisie dans le formulaire présent dans Post.php
+     * Permet l'enregistrement d'un nv commentaire lors d'une saisie dans le formulaire présent dans post.php
      * @param $author
      * @param $comcontent
      * @param $postId

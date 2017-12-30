@@ -1,7 +1,7 @@
 <?php
 
 
-require_once 'Configuration.php';
+require_once 'configuration.php';
 
 class View
 {
@@ -19,8 +19,8 @@ class View
     public function __construct($action, $controller = "")
     {
         // Détermination du nom du fichier vue à partir de l'action et du constructeur
-        // La convention de nommage des fichiers vues est : View/<$controller>/<$action>.php
-        $file = "View/";
+        // La convention de nommage des fichiers vues est : view/<$controller>/<$action>.php
+        $file = "view/";
         if ($controller != "")
         {
             $file = $file . $controller . "/";
@@ -45,7 +45,7 @@ class View
         // Nécessaire pour les URI de type controleur/action/id
         $racineWeb = Configuration::get("racineWeb", "/");
         // Génération du gabarit commun utilisant la partie spécifique
-        $view = $this->buildFile('View/Template.php',
+        $view = $this->buildFile('view/template.php',
             array('title' => $this->title, 'content' => $content,
                 'racineWeb' => $racineWeb));
         // Renvoi de la vue générée au navigateur

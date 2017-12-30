@@ -36,10 +36,10 @@ class Configuration
     {
         if(self::$parameters == null)
         {
-            $filepath = "Config/Dev.ini";
+            $filepath = "config/dev.ini";
             if(!file_exists($filepath))
             {
-                $filepath = "Config/Prod.ini";
+                $filepath = "config/prod.ini";
             }
             if(!file_exists($filepath))
             {

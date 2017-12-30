@@ -1,10 +1,10 @@
 <?php
 
-require_once 'Framework/Model.php';
+require_once 'framework/model.php';
 
 class Post extends Model
 {
-    // Pour afficher le dernier chapitre en Home
+    // Pour afficher le dernier chapitre en home
     public function lastPost()
     {
         $sql = 'SELECT id, title, content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM post ORDER BY date DESC LIMIT 0,1';

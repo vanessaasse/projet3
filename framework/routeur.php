@@ -1,8 +1,8 @@
 <?php
 
-require_once 'Controller.php';
-require_once 'Request.php';
-require_once 'View.php';
+require_once 'controller.php';
+require_once 'request.php';
+require_once 'view.php';
 
 class Routeur
 {
@@ -11,7 +11,7 @@ class Routeur
     {
         try {
 
-            // Instancie la class Request.php
+            // Instancie la class request.php
             // On reçoit les paramètres de la requête via GET et POST
             // array_merge fusionne plusieurs tableaux en un seul
             $request = new Request(array_merge($_GET, $_POST));
@@ -43,8 +43,8 @@ class Routeur
 
 
         // Création du nom du fichier du contrôleur
-        $classController = "Controller" . $controller;
-        $fileController = "Controller/" . $classController . ".php";
+        $classController = "controller" . $controller;
+        $fileController = "controller/" . $classController . ".php";
         if (file_exists($fileController)) {
             // Instanciation du controller adapté à la requête
             require ($fileController);
