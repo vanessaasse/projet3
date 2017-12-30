@@ -46,4 +46,18 @@ class Post extends Model
         }
     }
 
+
+    /**
+     * Fonction pour compter le nombre de posts publiés.
+     * count permet de compter le nombre d'enregistrement dans la table.
+     * @return mixed
+     */
+    Public function getNumberPosts()
+    {
+        $sql = 'SELECT count(*) as nbPosts from post';
+        $result = $this->executeRequest($sql);
+        $line = $result->fetch(); // Le résultat comporte toujours une ligne
+        return $line['nbPosts'];
+    }
+
 }

@@ -22,10 +22,25 @@ class Comment extends Model
      * @param $comcontent
      * @param $postId
      */
-    public function postComment($com_postId, $author, $comcontent) {
+    public function postComment($com_postId, $author, $comcontent)
+    {
         $sql = 'INSERT INTO comment(post_id, author, com_content, date)' . ' values(?, ?, ?, NOW())';
         $comment = $this->executeRequest($sql, array($com_postId, $author, $comcontent));
         return $comment;
+    }
+
+
+    /**
+     * Fonction pour compter le nombre de commentaires
+     * count permet de compter le nombre d'enregistrement dans la table.
+     * @return mixed
+     */
+    public function getNumberComments()
+    {
+        $sql = 'SELECT count(*) as nbComments from comment';
+        $result = $this->executeRequest($sql);
+        $line = $result->fetch(); // Le résultat comporte toujours une ligne.
+        return $line['nbComments'];
     }
 }
 
