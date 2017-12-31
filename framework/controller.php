@@ -43,5 +43,17 @@ abstract class Controller
         $view = new View($this->action, $controller);
         $view->build($dataView);
     }
+
+    /**
+     * Effectue une redirection vers un autre controller et une autre action
+     * Fonctionne avec controllersecure.php (l.25).
+     * Quand l'utilisateur n'est pas identifié, il est renvoyé vers la page de connexion.
+     */
+    protected function redirect($controller, $action = null)
+    {
+        $racineWeb = configuration::get("racineWeb", "/");
+        // redirection vers l'url racine_site/controller/action
+        header("Location :" . $racineWeb . $controller . "/" . $action);
+    }
 }
 
