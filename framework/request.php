@@ -11,6 +11,7 @@ class Request
     private $parameters;
 
     // objet session associée à la requête
+    /** @var Session */
     private $session;
 
     /** Constructeur
@@ -23,6 +24,19 @@ class Request
         $this->parameters = $parameters;
         $this->session = new Session();
     }
+
+
+    /*
+     * Renvoie l'objet Session associé à la requête
+     *
+     * @return Session objet Session
+     */
+    public function getSession()
+    {
+        return $this->session;
+    }
+
+
 
     //Renvoie vrai si le paramètre existe dans la requête
     public function parameterExist($name)
@@ -42,15 +56,7 @@ class Request
             throw new Exception("Paramètre ' $name ' absent de la requête.");
     }
 
-    /*
-     * Renvoie l'objet Session associé à la requête
-     *
-     * @return Session objet Session
-     */
-    public function getSession()
-    {
-        return $this->session;
-    }
+
 
 
 }

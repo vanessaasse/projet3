@@ -6,3 +6,4 @@ Bienvenue, <?= $this->sanitize($login) ?> !
 Ce blog comporte <?= $this->sanitize($nbPosts) ?> chapitres et <?= $this->sanitize($nbComments) ?> commentaires.
 
 
+<a href="connexion/deconnecter">Se déconnecter</>
