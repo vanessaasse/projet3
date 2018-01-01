@@ -16,11 +16,10 @@
     </fieldset>
 
 </form>
-
-
 <?php if (isset($msgErreur)): ?>
 <p><?= $msgErreur ?></p>
 <?php endif; ?>
+
 
 
 

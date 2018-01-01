@@ -31,7 +31,7 @@ class ControllerAdmin extends ControllerSecure
     public function index()
     {
         $nbPosts = $this->post->getNumberPosts();
-        $nbComments = $this->comment->getComments();
+        $nbComments = $this->comment->getNumberComments();
         $login = $this->request->getSession()->getAttribut("login");
         $this->buildView(array('nbPosts' => $nbPosts, 'nbComments' => $nbComments, 'login' => $login));
     }

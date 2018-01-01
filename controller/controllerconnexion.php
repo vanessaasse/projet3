@@ -1,5 +1,8 @@
 <?php
 
+require_once 'framework/controller.php';
+require_once 'model/user.php';
+
 /**
  * Ce controller sert à gérer la connexion et la déconnexion d'un utilisateur.
  * Ce controller a besoin de vérifier si un utilisateur existe dans la BDD.
@@ -8,6 +11,9 @@
  */
 class ControllerConnexion extends Controller
 {
+    /**
+     * @var User
+     */
     private $user;
 
 
@@ -23,6 +29,12 @@ class ControllerConnexion extends Controller
     }
 
 
+    /**
+     * Si le couple login/mot de passe saisi correspond bien à un utilisateur existant,
+     * son idenfiant ainsi que son login sont ajoutés dans la session,
+     * puis l'utilisateur (maintenant authentifié) est redirigé vers le contrôleur d'administration.
+     *
+     */
     public function connect()
     {
         if($this->request->parameterExist("login") && $this->request->parameterExist("password"))
@@ -31,17 +43,10 @@ class ControllerConnexion extends Controller
             $password = $this->request->getParameter("password");
             if($this->user->connect($login, $password))
             {
-                /**
-                 * Si le couple login/mot de passe saisi correspond bien à un utilisateur existant,
-                 * son idenfiant ainsi que son login sont ajoutés dans la session,
-                 * puis l'utilisateur (maintenant authentifié) est redirigé vers le contrôleur d'administration.
-                 *
-                 */
-
                 $user = $this->user->getUser($login, $password);
                 $this->request->getSession()->setAttribut("idUser", $user['idUser']);
                 $this->request->getSession()->setAttribut("login", $user['login']);
-                $this->redirect("admin");
+                $this->redirect("Admin");
             }
             else
             {
@@ -58,7 +63,7 @@ class ControllerConnexion extends Controller
     public function disconnect()
     {
         $this->request->getSession()->destroy();
-        $this->redirect("home");
+        $this->redirect("Home");
     }
 
 }

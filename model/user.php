@@ -17,7 +17,7 @@ class User extends Model
      */
     public function connect($login, $password)
     {
-        $sql = 'SELECT id FROM users WHERE login = ? AND password = ?';
+        $sql = 'SELECT id FROM users WHERE login=? AND password=?';
         $user = $this->executeRequest($sql, array($login, $password));
         return ($user->rowCount() == 1);
     }
@@ -28,7 +28,7 @@ class User extends Model
      */
     public function getUser($login, $password)
     {
-        $sql = 'SELECT id as idUser, login, password FROM users WHERE login = ? AND password = ?';
+        $sql = 'SELECT id as idUser, login, password FROM users WHERE login=? AND password=?';
         $user = $this->executeRequest($sql, array($login, $password));
         if ($user->rowCount() == 1)
         {
@@ -39,5 +39,4 @@ class User extends Model
             throw new Exception("Aucun utilisateur ne correspond aux identifiants fournis.");
         }
     }
-
 }

@@ -2,8 +2,8 @@
 
 <h2>Administration</h2>
 
-Bienvenue, <?= $this->sanitize($login) ?> !
-Ce blog comporte <?= $this->sanitize($nbPosts) ?> chapitres et <?= $this->sanitize($nbComments) ?> commentaires.
+<p></p>Bienvenue, <?= $this->sanitize($login) ?> !</p>
+<p>Ce blog comporte <?= $this->sanitize($nbPosts) ?> chapitres et <?= $this->sanitize($nbComments) ?> commentaires.</p><br />
 
 
-<a href="connexion/deconnecter">Se déconnecter</>
+<a href="connexion/disconnect">Se déconnecter</>

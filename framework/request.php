@@ -1,5 +1,7 @@
 <?php
 
+require_once 'session.php';
+
 
 /*  Cette classe modelise une requête
     Le seul attribut de cette classe ($parameters) est un tableau associatif rassemblant les paramètres de la requête.
@@ -11,7 +13,7 @@ class Request
     private $parameters;
 
     // objet session associée à la requête
-    /** @var Session */
+    /** @class Session */
     private $session;
 
     /** Constructeur

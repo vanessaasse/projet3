@@ -22,7 +22,7 @@ abstract class ControllerSecure extends Controller
         }
         else
         {
-            $this->redirect("connexion");
+            $this->redirect("Connexion");
         }
 
     }
