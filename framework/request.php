@@ -13,7 +13,7 @@ class Request
     private $parameters;
 
     // objet session associée à la requête
-    /** @class Session */
+    /** @class Session $session */
     private $session;
 
     /** Constructeur

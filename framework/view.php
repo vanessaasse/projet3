@@ -23,7 +23,7 @@ class View
         $file = "view/";
         if ($controller != "")
         {
-            $file = $file . $controller . "/";
+            $file = $file . strtolower($controller) . "/";
         }
         $this->file = $file . $action . ".php";
     }
