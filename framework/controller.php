@@ -53,7 +53,7 @@ abstract class Controller
     {
         $racineWeb = configuration::get("racineWeb", "/");
         // redirection vers l'url racine_site/controller/action
-        header("Location :" . $racineWeb . $controller . "/" . $action);
+        'Location :' . $racineWeb . $controller . "/" . $action;
     }
 }
 
