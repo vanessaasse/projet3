@@ -26,10 +26,10 @@ class User extends Model
      * Renvoie un utilisateur existant dans la BDD
      *
      */
-    public function getUser($login, $password)
+    public function getUser($login)
     {
-        $sql = 'SELECT id as idUser, login, password FROM users WHERE login=? AND password=?';
-        $user = $this->executeRequest($sql, array($login, $password));
+        $sql = 'SELECT id as idUser, login, password FROM users WHERE login=? ';
+        $user = $this->executeRequest($sql, array($login));
         if ($user->rowCount() == 1)
         {
             return $user->fetch(); // Accès à la première ligne de résultat

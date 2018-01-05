@@ -34,26 +34,30 @@ abstract class Controller
     public abstract function index();
 
     // Génère la vue associée au controller courant
-    protected function buildView($dataView = array())
+    protected function buildView($dataView = array(), $action = null)
     {
         // Détermination du nom du fichier vue à partir du nom du controller actuel
         $classController = get_class($this); // get_class retourne le nom de la classe d'un objet
         $controller = str_replace("Controller", "", $classController);
         //Instanciation et génération de la vue
-        $view = new View($this->action, $controller);
+        if(is_null($action))
+        {
+            $action = $this->action;
+        }
+        $view = new View($action, $controller);
         $view->build($dataView);
     }
 
     /**
      * Effectue une redirection vers un autre controller et une autre action
-     * Fonctionne avec controllersecure.php (l.25).
+     * Fonctionne avec controllerSecure.php (l.25).
      * Quand l'utilisateur n'est pas identifié, il est renvoyé vers la page de connexion.
      */
     protected function redirect($controller, $action = null)
     {
         $racineWeb = configuration::get("racineWeb", "/");
         // redirection vers l'url racine_site/controller/action
-        'Location :' . $racineWeb . $controller . "/" . $action;
+        header('Location: ' . $racineWeb . $controller . '/' . $action);
     }
 }
 

@@ -41,12 +41,13 @@ class ControllerConnexion extends Controller
         {
             $login = $this->request->getParameter("login");
             $password = $this->request->getParameter("password");
-            if($this->user->connect($login, $password))
+            $user = $this->user->getUser($login);
+            if(password_verify($password, $user['password']))
             {
-                $user = $this->user->getUser($login, $password);
+
                 $this->request->getSession()->setAttribut("idUser", $user['idUser']);
                 $this->request->getSession()->setAttribut("login", $user['login']);
-                $this->redirect("Admin");
+                $this->redirect("admin");
             }
             else
             {
