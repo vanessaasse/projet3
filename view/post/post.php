@@ -8,7 +8,7 @@ Publié le <?= $this->sanitize($post['date_fr']) ?><br />
 
 <hr />
 
-Commentaires à <?= $this->sanitize($post['title']) ?><br />
+Commentaires à propos du <?= $this->sanitize($post['title']) ?><br />
 
 <?php foreach ($comments as $comment): ?>
 
