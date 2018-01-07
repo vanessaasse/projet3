@@ -2,12 +2,21 @@
 
 <?php foreach ($posts as $post): ?>
 
+    <section class="wrapper style1 align-center">
+    <div class="inner">
 
-    <a href="post/post/<?= $this->sanitize($post['id']) ?>"><br /><?= $this->sanitize($post['title']) ?></a><br />
-    Publié le <?= $this->sanitize($post['date_fr']) ?><br />
-    <p><?= $this->sanitize(substr($post['content'], 0, 1500)) ?></p>
+        <div class="items style1 big">
+            <section>
+            <span class="icon style2 major fa-bookmark"></span>
 
-    <hr />
+            <h2><a href="post/post/<?= $this->sanitize($post['id']) ?>"><br /><?= $this->sanitize($post['title']) ?></a><h2>
+            <h4 class="dateintro">Publié le <?= $this->sanitize($post['date_fr']) ?></h4>
+            <p><?= $this->sanitize(substr($post['content'], 0, 1500)) ?></p>
+
+            </section>
+        </div>
+    </div>
+
 
 <?php endforeach; ?>
 

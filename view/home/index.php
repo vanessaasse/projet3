@@ -1,20 +1,23 @@
 <?php $this->title = "Billet pour l'Alaska"; ?>
 
-<p>Lisez, commentez, appréciez le dernier chapitre :</p>
 
-<?php foreach ($posts as $post): ?>
+    <section class="spotlight style1 orient-right content-align-center">
 
-    <?= $this->sanitize($post['title']) ?><br />
-    Publié le <?= $this->sanitize($post['date_fr']) ?>
+        <div class="content">
+        <h3 class="intro">Lisez, appréciez, commentez le dernier chapitre :</h3>
 
-    <p>
-        <?= $this->sanitize($post['content']) ?>
-        <br />
-    </p>
+        <?php foreach ($posts as $post): ?>
 
-    <a href="post/index">Découvrez les précédents chapitres !</a>
+        <h2><?= $this->sanitize($post['title']) ?></h2>
+            <h4 class="dateintro">Publié le <?= $this->sanitize($post['date_fr']) ?></h4>
 
-    <hr />
+        <p><?= $this->sanitize($post['content']) ?><br /></p>
+
+            <div class="button"><a href="post/index">Découvrez les précédents chapitres !</a></div>
+
+        </div>
+
+    </section>
 
 <?php endforeach; ?>
 

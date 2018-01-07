@@ -1,5 +1,45 @@
+/* Template */
+
+.navbar-default
+{
+    background-color: #ffffff;
+
+}
+
+.container-fluid {
+    margin: 10px;
+    float: right;
+}
+
+li a {
+    color: #3e606f;
+    text-align: center;
+    text-decoration: none;
+}
+
 footer
 {
     padding-bottom: 30px;
     text-align: center;
 }
+
+
+/* Home index */
+
+.intro
+{
+    text-align: left;
+    color: #91aab4;
+    font-weight: 800;
+    padding-bottom: 30px;
+    text-decoration: underline;
+}
+
+.dateintro
+{
+    text-align: right;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    color: #91aab4;
+}
+
