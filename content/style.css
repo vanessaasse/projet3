@@ -43,3 +43,15 @@ footer
     color: #91aab4;
 }
 
+/* post */
+
+.commentaires
+{
+    margin-left: 160px;
+    margin-right: 160px;
+}
+
+.box
+{
+    background-color: #cbdbd7;
+}

@@ -1,25 +1,32 @@
 <?php $this->title = "Billet simple pour l'Alaska"; ?>
 
+<section class="spotlight style1 orient-right content-align-center">
+    <div class="content">
 
-<?= $this->sanitize($post['title']) ?><br />
-Publié le <?= $this->sanitize($post['date_fr']) ?><br />
 
-<p><?= $this->sanitize($post['content']) ?></p>
+        <h2><?= $this->sanitize($post['title']) ?></h2>
+        <h4 class="dateintro">Publié le <?= $this->sanitize($post['date_fr']) ?></h4>
 
-<hr />
+        <p><?= $this->sanitize($post['content']) ?></p>
+        <hr />
+    </div>
+</section>
 
-Commentaires à propos du <?= $this->sanitize($post['title']) ?><br />
+
+<section class="commentaires">
+    <h3 class="intro">Commentaires à propos du <?= $this->sanitize($post['title']) ?></h3>
 
 <?php foreach ($comments as $comment): ?>
-
-    <?= $this->sanitize($comment['author']) ?> :<br />
-    Le <?= $this->sanitize($comment['date_fr']) ?>
-    <p><?= $this->sanitize($comment['com_content']) ?></p>
-
+    <div class="row">
+    <div class="box">Par <?= $this->sanitize($comment['author']) ?><br />
+        Le <?= $this->sanitize($comment['date_fr']) ?><br/>
+        <p><?= $this->sanitize($comment['com_content']) ?></p></div>
+    </div>
 
 
 <?php endforeach; ?>
 
+</section>
 
 <form method="post" action="post/addComment/<?= $post['id'] ?>">
     <fieldset>
