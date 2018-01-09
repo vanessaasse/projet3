@@ -16,16 +16,23 @@
 <section class="commentaires">
     <h3 class="intro">Commentaires à propos du <?= $this->sanitize($post['title']) ?></h3>
 
+    <div class="table-wrapper">
 <?php foreach ($comments as $comment): ?>
-    <div class="row">
-    <div class="box">Par <?= $this->sanitize($comment['author']) ?><br />
-        Le <?= $this->sanitize($comment['date_fr']) ?><br/>
-        <p><?= $this->sanitize($comment['com_content']) ?></p></div>
-    </div>
 
+    <table>
+        <tr>
+            <div class="box">
+    <strong>Par <?= $this->sanitize($comment['author']) ?><br />
+        Le <?= $this->sanitize($comment['date_fr']) ?><br/></strong>
+        <p><?= $this->sanitize($comment['com_content']) ?></p>
+            </div>
+        </tr>
+
+
+    </table>
 
 <?php endforeach; ?>
-
+    </div>
 </section>
 
 <form method="post" action="post/addComment/<?= $post['id'] ?>">
