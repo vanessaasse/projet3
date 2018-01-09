@@ -2059,6 +2059,7 @@ button.special:active,
 
 form {
 	margin: 0 0 2rem 0;
+	width: auto;
 }
 
 form .field {
