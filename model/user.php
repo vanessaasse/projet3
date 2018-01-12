@@ -1,6 +1,6 @@
 <?php
 
-require_once "framework/model.php";
+require_once "Framework/Model.php";
 
 /**
  * Les méthodes de la classe User permettent de vérifier si un utilisateur existe
