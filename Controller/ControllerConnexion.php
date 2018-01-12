@@ -1,6 +1,6 @@
 <?php
 
-require_once 'framework/controller.php';
+require_once 'Framework/Controller.php';
 require_once 'model/user.php';
 
 /**

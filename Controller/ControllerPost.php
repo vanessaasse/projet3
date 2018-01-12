@@ -1,6 +1,6 @@
 <?php
 
-require_once 'framework/controller.php';
+require_once 'Framework/Controller.php';
 require_once 'model/post.php';
 require_once 'model/comment.php';
 
@@ -16,7 +16,7 @@ class ControllerPost extends Controller
     }
 
     // pour afficher la liste des chapitres dans ChapterView
-    // Appelle la methode abstraite index() du controller.php l.36.
+    // Appelle la methode abstraite index() du Controller.php l.36.
     public function index()
     {
         $posts = $this->post->getPosts(); // va chercher la méthode getPosts dans le model post.php l.20

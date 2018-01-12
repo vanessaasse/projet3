@@ -1,7 +1,7 @@
 <?php
 
-require_once 'request.php';
-require_once 'view.php';
+require_once 'Request.php';
+require_once 'View.php';
 
 abstract class Controller
 {
@@ -50,7 +50,7 @@ abstract class Controller
 
     /**
      * Effectue une redirection vers un autre controller et une autre action
-     * Fonctionne avec controllerSecure.php (l.25).
+     * Fonctionne avec ControllerSecure.php (l.25).
      * Quand l'utilisateur n'est pas identifié, il est renvoyé vers la page de connexion.
      */
     protected function redirect($controller, $action = null)

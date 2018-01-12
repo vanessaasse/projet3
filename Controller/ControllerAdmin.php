@@ -1,6 +1,6 @@
 <?php
 
-require_once 'controllerSecure.php';
+require_once 'ControllerSecure.php';
 require_once 'model/post.php';
 require_once 'model/comment.php';
 
