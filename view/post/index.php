@@ -6,10 +6,7 @@
         <div class="items style1 big onscroll-fade-in">
 
 
-<?php foreach ($posts as $post): ?>
-
-
-
+            <?php foreach ($posts as $post): ?>
 
             <section>
             <span class="icon style2 major fa-bookmark"></span>
@@ -21,8 +18,7 @@
 
             </section>
 
-
-<?php endforeach; ?>
+            <?php endforeach; ?>
 
         </div>
     </div>

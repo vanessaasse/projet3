@@ -1,9 +1,15 @@
 <?php $this->title = "Billet pour l'Alaska - Administration"; ?>
 
-<h2>Administration</h2>
+<section class="spotlight style1 orient-right content-align-left">
+    <div class="content">
 
-<p></p>Bienvenue, <?= $this->sanitize($login) ?> !</p>
-<p>Ce blog comporte <?= $this->sanitize($nbPosts) ?> chapitres et <?= $this->sanitize($nbComments) ?> commentaires.</p><br />
+        <h3 class="intro">Administration</h3>
+
+        <p>Bienvenue, <?= $this->sanitize($login) ?> !</p>
+        <p>Ce blog comporte <?= $this->sanitize($nbPosts) ?> chapitres et <?= $this->sanitize($nbComments) ?> commentaires.</p><br />
 
 
 <a href="connexion/disconnect">Se déconnecter</>
+
+    </div>
+</section>

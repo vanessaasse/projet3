@@ -35,19 +35,20 @@
 </section>
 <hr/>
 
+
 <section class="addcomment">
     <h3 class="intro">Ajoutez un commentaire :</h3>
 
-<form method="post" action="post/addComment/<?= $post['id'] ?>">
+        <form method="post" action="post/addComment/<?= $post['id'] ?>">
 
         <label>Nom / Pseudo : </label>
         <input type="text" name="name" size="53" max="256" required >
-    <br/>
+        <br/>
         <label>Commentaire : </label>
         <textarea name="comment" cols="51" rows="5" required ></textarea>
-    <br/>
+        <br/>
         <input type="submit" value="Envoyez votre message" />
 
-</form>
+        </form>
 
 </section>

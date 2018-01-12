@@ -1,25 +1,28 @@
 <?php $this->title = "Billet pour l'Alaska - Connexion" ?>
 
-<p>Pour accéder à l'espace administrateur, vous devez vous connecter ci-dessous.</p>
+<section class="spotlight style1 orient-right content-align-left">
+    <div class="content">
 
-<form action="connexion/connect" method="post">
+        <h3 class="intro">Pour accéder à l'espace administrateur, veuillez saisir votre login et votre mot de passe.</h3>
 
-    <fieldset>
-        <legend>Saisissez votre login et mot de passe : </legend>
-        <table>
-            <tr><td><label>Login : </label></td><td>
-                    <input type="text" name="login" size="53" max="256" required autofocus></td></tr>
-            <tr><td><label>Mot de passe : </label></td><td>
-                    <input type="text" name="password" size="53" max="256" required></td></tr>
-            <tr><td><input type="submit" value="Connexion" /></td></tr>
-        </table>
-    </fieldset>
+        <form action="connexion/connect" method="post">
 
-</form>
-<?php if (isset($msgErreur)): ?>
-<p><?= $msgErreur ?></p>
+            <label>Login : </label>
+            <input type="text" name="login" size="53" max="256" required autofocus>
+            <br/>
+            <label>Mot de passe : </label>
+            <input type="text" name="password" size="53" max="256" required></td></tr>
+            <br/>
+            <input type="submit" value="Connexion" />
+
+        </form>
+
+<?php if (isset($errorMsg)): ?>
+<div class="error">Erreur : <?= $errorMsg ?></div>
 <?php endif; ?>
 
+    </div>
+</section>
 
 
 

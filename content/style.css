@@ -1,14 +1,9 @@
 /* Template */
 
-.navbar-default
-{
-    background-color: #ffffff;
-
-}
-
-.container-fluid {
-    margin: 10px;
+.navbar-nav {
     float: right;
+    margin: 10px;
+    padding: 0px;
 }
 
 li a {
@@ -64,3 +59,11 @@ footer
     width: 70%;
 }
 
+/* connexion */
+
+.error
+{
+    background-color: #91aab4;
+    color: white;
+    text-align: center;
+}
