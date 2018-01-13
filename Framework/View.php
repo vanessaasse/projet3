@@ -15,17 +15,30 @@ class View
      *
      * @param string $action Action à laquelle la vue est associée
      * @param string $controller Nom du contrôleur auquel la vue est associée
+     * @param string $template Template auquel la vue est associée
      */
-    public function __construct($action, $controller = "")
+    public function __construct($action, $controller = "", $template)
     {
         // Détermination du nom du fichier vue à partir de l'action et du constructeur
         // La convention de nommage des fichiers vues est : view/<$controller>/<$action>.php
         $file = "view/";
+
         if ($controller != "")
         {
             $file = $file . strtolower($controller) . "/";
         }
         $this->file = $file . $action . ".php";
+
+        //choix du template
+        if($controller = "Admin")
+        {
+            $this->template = "templateBack.php";
+        }
+        else
+        {
+            $this->template = "template.php";
+        }
+
     }
 
 
@@ -45,7 +58,7 @@ class View
         // Nécessaire pour les URI de type controleur/action/id
         $racineWeb = Configuration::get("racineWeb", "/");
         // Génération du gabarit commun utilisant la partie spécifique
-        $view = $this->buildFile('view/template.php',
+        $view = $this->buildFile('view/'. $this->template,
             array('title' => $this->title, 'content' => $content,
                 'racineWeb' => $racineWeb));
         // Renvoi de la vue générée au navigateur
