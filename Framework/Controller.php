@@ -11,6 +11,9 @@ abstract class Controller
     // Requête entrante
     protected $request;
 
+    //Template
+    private $template;
+
     // Définit la requête entrante
     public function setRequest(Request $request)
     {
@@ -34,19 +37,29 @@ abstract class Controller
     public abstract function index();
 
     // Génère la vue associée au controller courant
-    protected function buildView($dataView = array(), $action = null)
+    protected function buildView($dataView = array(), $action = null, $template = null)
     {
         // Détermination du nom du fichier vue à partir du nom du controller actuel
         $classController = get_class($this); // get_class retourne le nom de la classe d'un objet
         $controller = str_replace("Controller", "", $classController);
+
         //Instanciation et génération de la vue
         if(is_null($action))
         {
             $action = $this->action;
         }
-        $view = new View($action, $controller);
+
+        //instanciation du template
+        if(is_null($template))
+        {
+            $template = $this->template;
+        }
+
+        $view = new View($action, $controller, $template);
         $view->build($dataView);
     }
+
+
 
     /**
      * Effectue une redirection vers un autre controller et une autre action
