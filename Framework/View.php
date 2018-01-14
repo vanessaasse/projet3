@@ -10,6 +10,7 @@ class View
     // Titre de la vue (définie dans le fichier vue)
     private $title;
 
+
     /**
      * Constructeur
      *
@@ -30,7 +31,7 @@ class View
         $this->file = $file . $action . ".php";
 
         //choix du template
-        if($controller = "Admin")
+        if($controller == "Admin")
         {
             $this->template = "templateBack.php";
         }
@@ -64,6 +65,7 @@ class View
         // Renvoi de la vue générée au navigateur
         echo $view;
     }
+
 
 
     /**
