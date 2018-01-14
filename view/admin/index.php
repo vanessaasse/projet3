@@ -3,7 +3,7 @@
 <section class="spotlight style1 orient-right content-align-left">
     <div class="content">
 
-        <h3 class="intro">Administration</h3>
+        <h3 class="intro">Tableau de bord</h3>
 
         <p>Bienvenue, <?= $this->sanitize($login) ?> !</p>
         <p>Ce blog comporte <?= $this->sanitize($nbPosts) ?> chapitres et <?= $this->sanitize($nbComments) ?> commentaires.</p><br />
