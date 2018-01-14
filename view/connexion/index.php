@@ -7,11 +7,11 @@
 
         <form action="connexion/connect" method="post">
 
-            <label>Login : </label>
+            <label>Login / Pseudo : </label>
             <input type="text" name="login" size="53" max="256" required autofocus>
             <br/>
             <label>Mot de passe : </label>
-            <input type="text" name="password" size="53" max="256" required></td></tr>
+            <input type="password" name="password" size="53" max="256" required></td></tr>
             <br/>
             <input type="submit" value="Connexion" />
 
