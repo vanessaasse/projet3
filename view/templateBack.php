@@ -87,14 +87,15 @@
 
     <!--fin du corps de texte -->
 
-    </div>
+
 
 
 <footer>
     <hr />
-    © 2017 - Vanessa Asse - <a href="https://openclassrooms.com/paths/chef-de-projet-multimedia-developpement" target="blank">
+    <a href="https://fr.linkedin.com/in/vanessa-asse-665a2030" target="blank">© 2017 - Vanessa Asse -</a> <a href="https://openclassrooms.com/paths/chef-de-projet-multimedia-developpement" target="blank">
         Projet 3 dans la cadre de la formation<br />"Chef de projet multimédia - spécialité Développement" avec Openclassrooms</a>
 </footer>
+</div>
 
 
 <!-- /. WRAPPER  -->
