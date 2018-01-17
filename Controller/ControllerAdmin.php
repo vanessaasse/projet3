@@ -38,4 +38,11 @@ class ControllerAdmin extends ControllerSecure
         $this->buildView(array('nbPosts' => $nbPosts, 'nbComments' => $nbComments, 'posts'=>$posts, 'comments' =>$comments, 'login' => $login));
     }
 
+    public function chapters()
+    {
+        $posts = $this->post->getPosts(); // va chercher la méthode getPosts dans le model post.php l.20
+        $nbCommentsChp = $this->comment->getNumberCommentsbychapter($postId);
+        $this->buildView(array('posts' => $posts, 'nbCommentsChp'=> $nbCommentsChp));
+    }
+
 }
