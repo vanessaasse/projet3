@@ -18,10 +18,24 @@
                     Ce blog comporte <?= $this->sanitize($nbPosts) ?> chapitres et <?= $this->sanitize($nbComments) ?> commentaires.
                 </div>
                 <div class="alert alert-info">
-                    Le dernier post...
+                    LE DERNIER POST :<br/><br/>
+
+                    <?php foreach ($posts as $post): ?>
+
+                        <a href="post/post/<?= $this->sanitize($post['id']) ?>"><?= $this->sanitize($post['title']) ?></a>
+                    <?php endforeach; ?>
+
+
                 </div>
                 <div class="alert alert-warning">
-                    Le dernier commentaire...
+                    LE DERNIER COMMENTAIRE : <br/><br/>
+
+                    <?php foreach ($comments as $comment): ?>
+
+                        De <?= $this->sanitize($comment['author']) ?>, publié le <?= $this->sanitize($comment['date_fr']) ?><br/>
+                        "<?= $this->sanitize($comment['com_content']) ?>"<br/>
+                    <?php endforeach; ?>
+
                 </div>
                 <div class="alert alert-danger">
                     <a href="connexion/disconnect">Se déconnecter</a>
