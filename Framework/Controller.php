@@ -55,7 +55,7 @@ abstract class Controller
             $template = $this->template;
         }
 
-        $view = new View($action, $controller, $template);
+        $view = new View($action, $controller, $template );
         $view->build($dataView);
     }
 
