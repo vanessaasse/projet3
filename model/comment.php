@@ -42,6 +42,13 @@ class Comment extends Model
         $line = $result->fetch(); // Le résultat comporte toujours une ligne.
         return $line['nbComments'];
     }
+
+    public function lastComment()
+    {
+        $sql = 'SELECT id, author, com_content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM comment ORDER BY date DESC LIMIT 0,1';
+        $comments = $this->executeRequest($sql);
+        return $comments;
+    }
 }
 
 
