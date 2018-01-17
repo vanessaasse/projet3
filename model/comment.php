@@ -49,6 +49,14 @@ class Comment extends Model
         $comments = $this->executeRequest($sql);
         return $comments;
     }
+
+    public function getNumberCommentsbychapter($postId)
+    {
+        $sql = 'SELECT count(*) as nbCommentsChp from comment WHERE post_id = ?';
+        $result = $this->executeRequest($sql, array($postId));
+        $line = $result->fetch(); // Le résultat comporte toujours une ligne.
+        return $line['nbCommentsChp'];
+    }
 }
 
 
