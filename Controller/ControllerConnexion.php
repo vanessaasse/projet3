@@ -1,12 +1,12 @@
 <?php
 
 require_once 'Framework/Controller.php';
-require_once 'model/user.php';
+require_once 'Model/User.php';
 
 /**
  * Ce controller sert à gérer la connexion et la déconnexion d'un utilisateur.
  * Ce controller a besoin de vérifier si un utilisateur existe dans la BDD.
- * Pour cela, on utilise une class User ajoutée au model.
+ * Pour cela, on utilise une class User ajoutée au Model.
  *
  */
 class ControllerConnexion extends Controller

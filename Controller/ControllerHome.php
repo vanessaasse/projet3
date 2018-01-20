@@ -1,7 +1,7 @@
 <?php
 
 require_once 'Framework/Controller.php';
-require_once 'model/post.php';
+require_once 'Model/Post.php';
 
 class ControllerHome extends Controller
 {
@@ -20,7 +20,7 @@ class ControllerHome extends Controller
     */
     public function index()
     {
-        //va chercher la méthode lasPost dans le model/post.php l.8
+        //va chercher la méthode lasPost dans le Model/Post.php l.8
        $posts = $this->post->lastPost();
         // détermine la nouvelle vue. Appelle la protected function BuildView du Controller.php l.40
        $this->buildView(array('posts' => $posts));

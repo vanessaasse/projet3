@@ -161,8 +161,8 @@
 
 // Mixins.
 
-	/// Sets the global box model.
-	/// @param {string} $model Model (default is content).
+	/// Sets the global box Model.
+	/// @param {string} $Model Model (default is content).
 	@mixin boxModel($model: 'content') {
 
 		$x: $model + '-box';
@@ -376,7 +376,7 @@
 
 			}
 
-		// Box model.
+		// Box Model.
 			$x: map-get($config, 'boxModel');
 
 			@if $x {
