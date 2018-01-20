@@ -45,10 +45,25 @@ class ControllerAdmin extends ControllerSecure
     }
 
 
-    /*
-
     public function create()
+    {
+        if(isset($_POST['title']) && isset($_POST['content'])) {
+            if (!empty($_POST['title']) && !empty($_POST['content']))
+            {
+                $title = $_POST['title'];
+                $content = $_POST['content'];
+                $this->post->addPost($title, $content);
+                $this->buildView(array('title' => $title, 'content' => $content));
+            }
+        }
 
+        else
+            throw new Exception('Une erreur est survenue.');
+
+    }
+
+
+    /*
     public function edit()
     {
         $id = $this->request->getParameter("id");
