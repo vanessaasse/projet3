@@ -22,15 +22,14 @@
                 <tbody>
                 <?php foreach ($posts as $post): ?>
                 <tr>
-<td><?= $this->sanitize($post['title']) ?></td>
+                    <td><?= $this->sanitize($post['title']) ?></td>
                     <td>Le <?= $this->sanitize($post['date_fr']) ?></td>
-    <td><?= $this->sanitize($nbCommentsChp) ?></td>
+                    <td><?= $this->sanitize($post['nbcomment']) ?></td>
                 </tr>
                 <?php endforeach; ?>
                 </tbody>
             </table>
         </div>
-
     </div>
 </div>
 
