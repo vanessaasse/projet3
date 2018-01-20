@@ -10,6 +10,10 @@ class View
     // Titre de la vue (définie dans le fichier vue)
     private $title;
 
+    const TEMPLATE_FONT = 'template.php';
+    const TEMPLATE_BACK = 'templateBack.php';
+    private $template;
+
 
     /**
      * Constructeur
@@ -18,7 +22,7 @@ class View
      * @param string $controller Nom du contrôleur auquel la vue est associée
      * @param string $template Template auquel la vue est associée
      */
-    public function __construct($action, $controller = "", $template)
+    public function __construct($action, $controller = "")
     {
         // Détermination du nom du fichier vue à partir de l'action et du constructeur
         // La convention de nommage des fichiers vues est : view/<$controller>/<$action>.php
@@ -33,11 +37,11 @@ class View
         //choix du template
         if($controller == "Admin")
         {
-            $this->template = "templateBack.php";
+            $this->template = self::TEMPLATE_BACK;
         }
         else
         {
-            $this->template = "template.php";
+            $this->template = self::TEMPLATE_FONT;
         }
     }
 
