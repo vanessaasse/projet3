@@ -17,7 +17,7 @@ class Comment extends Model
 
 
     /**
-     * Permet l'enregistrement d'un nv commentaire lors d'une saisie dans le formulaire présent dans post.php
+     * Permet l'enregistrement d'un nv commentaire lors d'une saisie dans le formulaire présent dans Post.php
      * @param $author
      * @param $comcontent
      * @param $postId
@@ -50,13 +50,6 @@ class Comment extends Model
         return $comments;
     }
 
-    public function getNumberCommentsbychapter($postId)
-    {
-        $sql = 'SELECT count(*) as nbCommentsChp from comment WHERE post_id = ?';
-        $result = $this->executeRequest($sql, array($postId));
-        $line = $result->fetch(); // Le résultat comporte toujours une ligne.
-        return $line['nbCommentsChp'];
-    }
 }
 
 
