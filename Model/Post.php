@@ -60,9 +60,9 @@ class Post extends Model
         return $line['nbPosts'];
     }
 
-    public function editPost($title, $content)
+   public function addPost($title, $content)
     {
-        $sql = 'INSERT INTO post(title, content, date)' . ' values(?, ?, ?, NOW())';
+        $sql = 'INSERT INTO post(title, content, date)' . ' values(?,?, NOW())';
         $post = $this->executeRequest($sql, array($title, $content));
         return $post;
     }
