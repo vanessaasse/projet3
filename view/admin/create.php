@@ -8,7 +8,7 @@
 <form method="post" action="admin/create">
 
     <label>Titre : </label>
-    <input type="text" name="title" size="53" max="600" required value="<?php if(isset($title)) echo $title ?>">
+    <input type="text" name="title" size="53" max="600" placeholder="Saisir votre titre" required value="<?php if(isset($title)) echo $title ?>">
     <br/>
     <label>Contenu : </label>
     <textarea name="content" cols="51" rows="5" required ><?php if(isset($content)) echo $content  ?></textarea>
@@ -16,4 +16,3 @@
     <input type="submit" value="Enregistrer" />
 
 </form>
-
