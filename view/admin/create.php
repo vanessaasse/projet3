@@ -5,13 +5,13 @@
 </div>
 
 
-<form method="post" action="">
+<form method="post" action="admin/create">
 
     <label>Titre : </label>
-    <input type="text" name="title" size="53" max="600" required value="<?php echo $title ?>">
+    <input type="text" name="title" size="53" max="600" required value="<?php if(isset($title)) echo $title ?>">
     <br/>
     <label>Contenu : </label>
-    <textarea name="content" cols="51" rows="5" required ><?php echo $content ?></textarea>
+    <textarea name="content" cols="51" rows="5" required ><?php if(isset($content)) echo $content  ?></textarea>
     <br/>
     <input type="submit" value="Enregistrer" />
 
