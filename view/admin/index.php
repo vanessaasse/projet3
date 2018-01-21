@@ -1,7 +1,7 @@
 <?php $this->title = "Billet pour l'Alaska - Administration"; ?>
 
 <div class="breadcrumb">
-    <li><a href="http://localhost:8888/projet3fw/admin"> >> Tableau de bord</a></li>
+    <li><a href="admin"> >> Tableau de bord</a></li>
 </div>
 
 

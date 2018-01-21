@@ -49,13 +49,13 @@
         <div class="sidebar-collapse">
             <ul class="nav" id="main-menu">
                 <li>
-                    <a href="http://localhost:8888/projet3fw"><i class="fa fa-arrow-right"></i>Aller sur le site</a>
+                    <a href="home"><i class="fa fa-arrow-right"></i>Aller sur le site</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8888/projet3fw/admin"><i class="fa fa-dashboard"></i>Tableau de bord</a>
+                    <a href="admin"><i class="fa fa-dashboard"></i>Tableau de bord</a>
                 </li>
                 <li>
-                    <a href="http://localhost:8888/projet3fw/admin/chapters"><i class="fa fa-bookmark"></i>Tous les chapitres</a>
+                    <a href="admin/chapters"><i class="fa fa-bookmark"></i>Tous les chapitres</a>
                 </li>
 
                 <li>
