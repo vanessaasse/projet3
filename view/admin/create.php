@@ -8,10 +8,10 @@
 <form method="post" action="">
 
     <label>Titre : </label>
-    <input type="text" name="title" size="53" max="600" required value="<?php if(isset($_POST['title'])) echo $_POST['title']?>">
+    <input type="text" name="title" size="53" max="600" required value="<?php echo $title ?>">
     <br/>
     <label>Contenu : </label>
-    <textarea name="content" cols="51" rows="5" required ><?php if(isset($_POST['content'])) echo $_POST['content']?></textarea>
+    <textarea name="content" cols="51" rows="5" required ><?php echo $content ?></textarea>
     <br/>
     <input type="submit" value="Enregistrer" />
 
