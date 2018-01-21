@@ -53,13 +53,16 @@ class ControllerAdmin extends ControllerSecure
                 $title = $_POST['title'];
                 $content = $_POST['content'];
                 $this->post->addPost($title, $content);
-                $this->buildView(array('title' => $title, 'content' => $content));
+                $this->redirect($this->create());
             }
         }
-
         else
-            throw new Exception('Une erreur est survenue.');
-
+        {
+            $title = $this->request->getParameter("title");
+            $content = $this->request->getParameter("content");
+            $this->post->addPost($title, $content);
+            $this->buildView(array('title' => $title, 'content' => $content));
+        }
     }
 
 
