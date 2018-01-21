@@ -58,18 +58,15 @@ class ControllerAdmin extends ControllerSecure
         if(isset($_POST['title']) && isset($_POST['content'])) {
             if (!empty($_POST['title']) && !empty($_POST['content']))
             {
-                $title = $_POST['title'];
-                $content = $_POST['content'];
+                $title = $this->request->getParameter($_POST['title']);
+                $content = $this->request->getParameter($_POST['content']);
                 $this->post->addPost($title, $content);
-                $this->redirect($this->create());
+                $this->executeAction($this->post());
             }
         }
         else
         {
-            $title = $this->request->getParameter("title");
-            $content = $this->request->getParameter("content");
-            $this->post->addPost($title, $content);
-            $this->buildView(array('title' => $title, 'content' => $content));
+            $this->buildView(create);
         }
     }
 
