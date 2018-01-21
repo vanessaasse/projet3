@@ -66,7 +66,7 @@ class ControllerAdmin extends ControllerSecure
         }
         else
         {
-                $this->buildView(create);
+                $this->buildView();
         }
     }
 
