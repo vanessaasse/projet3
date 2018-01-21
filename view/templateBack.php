@@ -59,7 +59,7 @@
                 </li>
 
                 <li>
-                    <a href="#"><i class="fa fa-edit"></i>Ajouter un chapitre</a>
+                    <a href="admin/create"><i class="fa fa-edit"></i>Ajouter un chapitre</a>
                 </li>
                 <li>
                     <a href="#"><i class="fa fa-comments"></i>Commentaires</a>
