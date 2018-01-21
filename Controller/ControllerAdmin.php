@@ -44,6 +44,14 @@ class ControllerAdmin extends ControllerSecure
         $this->buildView(array('posts' => $posts));
     }
 
+    public function post()
+    {
+        $postId = $this->request->getParameter("id"); /* le parametre disparait lors de l'annonce de "public function post($postId)". On l'annonce
+ du coup en début de la méthode en faisant appel à la méthode getParameter de la class Request */
+        $post = $this->post->getPost($postId); // va chercher la méthode GetPost($postId) dans le Model Post.php l.33
+        $this->buildView(array('post' => $post));
+    }
+
 
     public function create()
     {

@@ -22,7 +22,7 @@
                 <tbody>
                 <?php foreach ($posts as $post): ?>
                 <tr>
-                    <td><?= $this->sanitize($post['title']) ?></td>
+                    <td><a href="admin/post/<?= $this->sanitize($post['id']) ?>"><?= $this->sanitize($post['title']) ?></a></td>
                     <td>Le <?= $this->sanitize($post['date_fr']) ?></td>
                     <td><?= $this->sanitize($post['nbcomment']) ?></td>
                 </tr>
