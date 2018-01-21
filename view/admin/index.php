@@ -22,7 +22,7 @@
 
                     <?php foreach ($posts as $post): ?>
 
-                        <a href="post/post/<?= $this->sanitize($post['id']) ?>"><?= $this->sanitize($post['title']) ?></a>
+                        <a href="admin/post/<?= $this->sanitize($post['id']) ?>"><?= $this->sanitize($post['title']) ?></a>
                     <?php endforeach; ?>
 
 
