@@ -27,8 +27,20 @@
         tinyMCE.init({
             mode : "textareas",
             theme : "modern",
-            language : "fr_FR"
-        });
+            language : "fr_FR",
+            plugins: 'hr, lists, link, preview, code, media, save',
+            branding: false,
+            height : 300,
+            menubar : false,
+            toolbar1: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright | cut copy paste | media',
+            toolbar2: 'hr bullist link code preview save'
+
+
+
+
+
+
+        })
     </script>
 
     <title><?= $title ?></title>
