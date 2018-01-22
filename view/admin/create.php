@@ -5,15 +5,26 @@
     <li><a href="admin/create"> >> Ajouter un chapitre </a></li>
 </div>
 
-
 <form method="post" action="admin/create">
 
-    <label>Titre : </label>
-    <input type="text" name="title" size="53" max="600" placeholder="Saisir votre titre" required value="<?php if(isset($title)) echo $title ?>">
-    <br/>
-    <label>Contenu : </label>
-    <textarea name="content" cols="51" rows="20" ><?php if(isset($content)) echo $content  ?></textarea>
-    <br/>
-    <input type="submit" value="Enregistrer" />
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="panel panel-default">
+                <div class="panel-body">
+
+                <div class="sub-title">Titre :</div>
+                <input type="text" name="title" class="form-control" size="53" max="600" placeholder="Saisissez votre titre"
+                       required value="<?php if(isset($title)) echo $title ?>">
+                <br/>
+                <div class="sub-title">Contenu : </div>
+                <textarea name="content" ><?php if(isset($content)) echo $content  ?></textarea>
+                <br/>
+                    <button type="submit" class="btn btn-default">Enregistrez</button>
+
+                </div>
+        </div>
+    </div>
+</div>
 
 </form>
+

@@ -32,7 +32,7 @@
             branding: false,
             height : 300,
             menubar : false,
-            toolbar1: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright | cut copy paste | media',
+            toolbar1: 'undo redo | styleselect | bold italic | removeformat | alignleft aligncenter alignright | cut copy paste | media',
             toolbar2: 'hr bullist link code preview save'
 
 
