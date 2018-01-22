@@ -1,7 +1,7 @@
 <?php $this->title = "Billet simple pour l'Alaska"; ?>
 
 <div class="breadcrumb">
-    <li><a href="admin/post/<?= $this->sanitize($post['id']) ?>">Editer "<?= $this->sanitize($post['title']) ?>"</a><br/>Publié le <?= $this->sanitize($post['date_fr']) ?></li>
+    <li><a href="admin/post/<?= $post['id'] ?>">Editer "<?= $post['title'] ?>"</a><br/>Publié le <?= $post['date_fr'] ?></li>
 </div>
 
 
@@ -11,7 +11,7 @@
         <div class="panel panel-default">
             <div class="panel-body">
                 <div class="admin-post">
-                <?= $this->sanitize($post['content']) ?>
+                <?= $post['content'] ?>
                 </div>
             </div>
         </div>

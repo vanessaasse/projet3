@@ -4,10 +4,10 @@
     <div class="content">
 
 
-        <h2><?= $this->sanitize($post['title']) ?></h2>
-        <h4 class="dateintro">Publié le <?= $this->sanitize($post['date_fr']) ?></h4>
+        <h2><?= $post['title'] ?></h2>
+        <h4 class="dateintro">Publié le <?= $post['date_fr'] ?></h4>
 
-        <p><?= $this->sanitize($post['content']) ?></p>
+        <p><?= $post['content'] ?></p>
         <hr />
     </div>
 </section>

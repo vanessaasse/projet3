@@ -8,10 +8,10 @@
 
         <?php foreach ($posts as $post): ?>
 
-        <h2><?= $this->sanitize($post['title']) ?></h2>
-        <h4 class="dateintro">Publié le <?= $this->sanitize($post['date_fr']) ?></h4>
+        <h2><?= $post['title'] ?></h2>
+        <h4 class="dateintro">Publié le <?= $post['date_fr'] ?></h4>
 
-        <p><?= $this->sanitize($post['content']) ?><br /></p>
+        <p><?= $post['content'] ?><br /></p>
 
         <div class="button"><a href="post/index">Découvrez les précédents chapitres !</a></div>
 
