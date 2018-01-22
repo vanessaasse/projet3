@@ -21,7 +21,18 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link rel="stylesheet" href="assets/js/Lightweight-Chart/cssCharts.css">
 
+
+    <script type="text/javascript" src="content/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript">
+        tinyMCE.init({
+            mode : "textareas",
+            theme : "modern",
+            language : "fr_FR"
+        });
+    </script>
+
     <title><?= $title ?></title>
+
 </head>
 
 <body>
