@@ -67,4 +67,11 @@ class Post extends Model
         return $post;
     }
 
+    public function updatePost($title, $content, $id)
+    {
+        $sql = 'UPDATE post SET title = ? , content = ? WHERE id = ?';
+        $post = $this->executeRequest($sql, array($title, $content, $id));
+        return $post;
+    }
+
 }

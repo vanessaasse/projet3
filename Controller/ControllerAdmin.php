@@ -55,21 +55,59 @@ class ControllerAdmin extends ControllerSecure
 
     public function create()
     {
-        if(isset($_POST['title']) && isset($_POST['content'])) {
-            if (!empty($_POST['title']) && !empty($_POST['content']))
-            {
+        $title = $this->request->getParameterByDefault('title');
+        $content = $this->request->getParameterByDefault('content');
+
+
+        if($title && $content)
+        {
                 $title = $this->request->getParameter('title');
                 $content = $this->request->getParameter('content');
                 $this->post->addPost($title, $content);
                 $this->executeAction("chapters");
             }
-        }
         else
         {
-                $this->buildView();
+                $this->buildView(array('title'=>$title,'content'=>$content));
         }
     }
 
+    public function edit()
+    {
+        $post['id'] = $this->request->getParameter('id'); // récupérer le paramètre de l'ID
+
+        if($post['id'] != 0)
+        {
+            $post = $this->post->getPost($post['id']); // récupère le post avec la méthode getPost
+            $post['title'] = $this->request->getParameterByDefault('title'); // affiche moi le titre par défault que je récupere avec value dans post.php
+            $post['content'] = $this->request->getParameterByDefault('content'); // affiche moi le contenu par défault que je récupere avec value dans post.php
+        }
+        else
+        {
+            throw new Exception('Erreur 404');
+        }
+
+
+
+
+        if($post['title']  && $post['content'])
+        {
+            $title = $this->request->getParameter('title');
+            $content = $this->request->getParameter('content');
+            $this->post->updatePost($title, $content,$post['id']);
+            $this->executeAction("post");
+        }
+        else
+        {
+            $this->buildView(array('title'=> $title ?? $post['title'] ,'content' => $content ?? $post['content']));
+            // ?? retourne le premier opérande s'il existe et s'il n'est pas NULL.
+        }
+    }
+
+
+    //$post = $this->post->getPost('id');
+    //$post = $this->post->getPost($post['id']);
+    //recuprerle post sinon lever une 404 */
 
     /*
     public function edit()
