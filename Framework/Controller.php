@@ -9,6 +9,7 @@ abstract class Controller
     private $action;
 
     // Requête entrante
+    /** @var Request */
     protected $request;
 
 

@@ -13,7 +13,7 @@ class Request
     private $parameters;
 
     // objet session associée à la requête
-    /** @class Session $session */
+    /** @var Session */
     private $session;
 
     /** Constructeur
@@ -56,6 +56,20 @@ class Request
         }
         else
             throw new Exception("Paramètre ' $name ' absent de la requête.");
+    }
+
+    // Renvoie les valeur des paramètres par défaut
+    public function getParameterByDefault($name, $default = null){
+
+        try
+        {
+            return $this->getParameter($name);
+        }
+        catch(Exception $e)
+        {
+                 return $default;
+        }
+
     }
 
 
