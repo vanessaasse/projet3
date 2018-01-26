@@ -5,7 +5,8 @@
     <li><a href="admin/edit"> >> Ajouter un chapitre </a></li>
 </div>
 
-<form method="post" action="admin/edit/<?= $id ?>">
+<form method="post" action="admin/edit/<?= $post['id'] ?>">
+    <?php var_dump($id); ?>
 
     <div class="row">
         <div class="col-xs-12">
@@ -20,7 +21,6 @@
                     <textarea name="content" ><?php if(isset($post['content'])) echo $post['content'] ?></textarea>
                     <br/>
                     <button type="submit" class="btn btn-default">Mettre à jour</button>
-                       <?php var_dump($id); ?>
 
 
                 </div>
