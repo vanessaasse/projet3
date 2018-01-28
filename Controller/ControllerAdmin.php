@@ -75,36 +75,20 @@ class ControllerAdmin extends ControllerSecure
     public function edit()
     {
         $post['id'] = $this->request->getParameter('id'); // récupérer le paramètre de l'ID
+        $post['title'] = $this->request->getParameterByDefault('title'); // affiche moi le titre par défault que je récupere avec value dans post.php
+        $post['content'] = $this->request->getParameterByDefault('content');// affiche moi le contenu par défault que je récupere avec value dans post.php
+        $post = $this->post->getPost($post['id']); // J'affiche le post
 
-        if($post['id'] != 0)
+        if($post['id'] != 0 && $post['title'] && $post['content'])
         {
-            $post = $this->post->getPost($post['id']); // récupère le post avec la méthode getPost
-            $post['title'] = $this->request->getParameterByDefault('title'); // affiche moi le titre par défault que je récupere avec value dans post.php
-            $post['content'] = $this->request->getParameterByDefault('content'); // affiche moi le contenu par défault que je récupere avec value dans post.php
+            $this->buildView(array('post' => $post));
+            $this->post->updatePost($post['title'], $post['content'], $post['id']);
         }
         else
         {
-            throw new Exception('Erreur 404');
-        }
-
-
-
-
-        if($post['title']  && $post['content'])
-        {
-            $title = $this->request->getParameter('title');
-            $content = $this->request->getParameter('content');
-            $this->post->updatePost($title, $content,$post['id']);
-            $this->executeAction("post");
-        }
-        else
-        {
-            $this->buildView(array('title'=> $title ?? $post['title'] ,'content' => $content ?? $post['content']));
-            // ?? retourne le premier opérande s'il existe et s'il n'est pas NULL.
+            $this->buildView(array('title'=> $title ?? $post['title'],'content'=> $content ?? $post['content']));
         }
     }
-
-
     //$post = $this->post->getPost('id');
     //$post = $this->post->getPost($post['id']);
     //recuprerle post sinon lever une 404 */
