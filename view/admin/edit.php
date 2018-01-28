@@ -6,7 +6,7 @@
 </div>
 
 <form method="post" action="admin/edit/<?= $post['id'] ?>">
-    <?php var_dump($id); ?>
+
 
     <div class="row">
         <div class="col-xs-12">
