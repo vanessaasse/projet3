@@ -26,7 +26,7 @@
 
         <div class="alert alert-success"><i class="fa fa-edit "></i> Publier</div>
 
-        <div class="alert alert-danger"><i class="fa fa-pencil"></i> Supprimer</div>
+        <div class="alert alert-danger"><i class="fa fa-pencil"></i><a href="admin/delete/<?= $post['id'] ?>">Supprimer</a></div>
     </div>
 </div>
 

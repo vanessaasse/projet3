@@ -75,20 +75,28 @@ class ControllerAdmin extends ControllerSecure
     public function edit()
     {
         $post['id'] = $this->request->getParameter('id'); // récupérer le paramètre de l'ID
-        $post['title'] = $this->request->getParameterByDefault('title'); // affiche moi le titre par défault que je récupere avec value dans post.php
-        $post['content'] = $this->request->getParameterByDefault('content');// affiche moi le contenu par défault que je récupere avec value dans post.php
         $post = $this->post->getPost($post['id']); // J'affiche le post
 
         if($post['id'] != 0 && $post['title'] && $post['content'])
         {
-            $this->buildView(array('post' => $post));
+            $this->buildView(array('post'=> $post)); // construit la vue
             $this->post->updatePost($post['title'], $post['content'], $post['id']);
         }
         else
         {
-            $this->buildView(array('title'=> $title ?? $post['title'],'content'=> $content ?? $post['content']));
+            throw new Exception('Erreur 404.');
+
         }
     }
+
+    public function delete()
+    {
+        $post['id'] = $this->request->getParameter('id'); // récupérer le paramètre de l'ID
+        $this->post->deletePost($post['id']);
+        $this->executeAction("chapters");
+    }
+    //$post['title'] = $this->request->getParameter('title'); // affiche moi le titre par défault que je récupere avec value dans post.php
+    //$post['content'] = $this->request->getParameter('content');// affiche moi le contenu par défault que je récupere avec value dans post.php
     //$post = $this->post->getPost('id');
     //$post = $this->post->getPost($post['id']);
     //recuprerle post sinon lever une 404 */
@@ -112,6 +120,7 @@ class ControllerAdmin extends ControllerSecure
 
 
         $this->buildView(array('title' => $title, 'content'=> $content));
+    //$this->buildView(array('title'=> $title ?? $post['title'],'content'=> $content ?? $post['title']));
     } */
 
 }
