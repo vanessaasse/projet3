@@ -65,7 +65,7 @@ class ControllerAdmin extends ControllerSecure
                 $content = $this->request->getParameter('content');
                 $this->post->addPost($title, $content);
                 $this->executeAction("chapters");
-            }
+        }
         else
         {
                 $this->buildView(array('title'=>$title,'content'=>$content));
@@ -75,17 +75,20 @@ class ControllerAdmin extends ControllerSecure
     public function edit()
     {
         $post['id'] = $this->request->getParameter('id'); // récupérer le paramètre de l'ID
-        $post = $this->post->getPost($post['id']); // J'affiche le post
+        $post = $this->post->getPost($post['id']); // je récupère le post
+        $this->buildView(array('post'=> $post)); // je construis la vue
+
 
         if($post['id'] != 0 && $post['title'] && $post['content'])
         {
-            $this->buildView(array('post'=> $post)); // construit la vue
+            $post['title'] = $this->request->getParameter('title');
+            $post['content'] = $this->request->getParameter('content');
             $this->post->updatePost($post['title'], $post['content'], $post['id']);
+            $this->executeAction("chapters");
         }
         else
         {
             throw new Exception('Erreur 404.');
-
         }
     }
 
@@ -95,6 +98,20 @@ class ControllerAdmin extends ControllerSecure
         $this->post->deletePost($post['id']);
         $this->executeAction("chapters");
     }
+
+
+
+
+    /*public function edit()
+    {
+        $post['id'] = $this->request->getParameter('id'); // récupérer le paramètre de l'ID
+        $post = $this->post->getPost($post['id']); // J'affiche le post
+        $this->buildView(array('post'=> $post)); // construit la vue
+        $this->post->updatePost($post['title'], $post['content'], $post['id']);
+        //$this->executeAction("chapters"); si je mets buildview je ne peux pas executeaction >> deux écrans l'un sous l'autre.
+    }*/
+
+
     //$post['title'] = $this->request->getParameter('title'); // affiche moi le titre par défault que je récupere avec value dans post.php
     //$post['content'] = $this->request->getParameter('content');// affiche moi le contenu par défault que je récupere avec value dans post.php
     //$post = $this->post->getPost('id');
