@@ -53,18 +53,29 @@ class Comment extends Model
     /**
      * Méthode pour enregistrer le signalement d'un commentaire dans la BDD.
      */
-    public function updateComment($id)
+    public function signal($id)
     {
-        $sql = 'UPDATE comment SET signal_comment = "signalé" WHERE id = ?';
+        $sql = 'UPDATE comment SET signal_comment = 1 WHERE id = ?';
         $comment = $this->executeRequest($sql, array($id));
         return $comment;
     }
 
+
     public function getComment($id)
     {
-        //TODO recuperer le com de l'id $id
-    }
+        $sql = 'SELECT id, author, com_content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM comment WHERE id = ?';
+        $comment = $this->executeRequest($sql, array($id));
 
+        if($comment->rowCount() > 0) // RowCount retourne le nombre de lignes affectées par le dernier appel à la fonction PDOStatement
+        {
+            return $comment->fetch(); // Accès à la 1e ligne de résultat
+        }
+
+        else
+        {
+            throw new Exception('Aucun commentaire ne correspond à l\'identifiant suivant : ' .$id . '.<br/>');
+        }
+    }
 }
 
 

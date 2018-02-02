@@ -25,7 +25,7 @@
             <strong>Par <?= $this->sanitize($comment['author']) ?><br />
             Le <?= $this->sanitize($comment['date_fr']) ?><br/></strong>
             <p><?= $this->sanitize($comment['com_content']) ?></p>
-                <h5><i class="fa fa-arrow-circle-right"></i><strong><a href="post/signal/<?= $comment['id'] ?>"> Signaler ce commentaire</a></strong></h5>
+                <h5><i class="fa fa-arrow-circle-right"></i><strong><a href="post/moderation/<?= $comment['id'] ?>"> Signaler ce commentaire</a></strong></h5>
             </div>
         </tr>
         </table>
