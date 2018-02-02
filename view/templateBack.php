@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="<?= $racineWeb ?>"> <!-- pas de a devant href car le a définit le lien hypertexte. -->
 
+    <!-- Bootstrap -->
     <link href="content/Bootstrap/node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link href="content/styleBack.css" rel="stylesheet">
 
