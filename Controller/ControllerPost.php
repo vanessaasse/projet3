@@ -49,22 +49,55 @@ class ControllerPost extends Controller
 
     }
 
-    /*
+
     //signale un commentaire
-    public function signal()
+    public function moderation()
     {
-        $id = $this->request->getParameter('id'); // récupérer l'id du commentaire
-        $com = $this->comment->getComment($id);
+        $id = $this->request->getParameter('id'); // récupère l'id du commentaire
+        $comment = $this->comment->getComment($id); // récupère le contenu du commentaire
 
 
-        if($com)
+        if($comment)
         {
+            $this->comment->signal(
+                $this->request->getParameter('signal_comment'),
+                $comment['id']);
 
-            $this->comment->updateComment($comment['id']);
+            $this->redirect("post","moderation/" . $comment['post_id'] );
+        }
+        else
+        {
+            $this->redirect("post", "nofound");
+        }
+    }
+
+
+    /*public function edit()
+    {
+        $id =  $this->request->getParameter('id'); // récupérer le paramètre de l'ID
+        $post = $this->post->getPost($id); // je récupère le post
+
+        // j'arrive en post car des données sont saisies dans le formulaire
+        if($this->request->parameterExist('title') && $this->request->parameterExist('content')) {
+
+            $this->post->updatePost(
+                $this->request->getParameter('title'),
+                $this->request->getParameter('content'),
+                $id
+            );
+
+            $this->redirect("admin", "post/" . $post['id']); // une fois le post créé, je redirige vers la vue Admin/post/iddupost
         }
 
-        redirection vers le post contenant le commentaire
+        // j'arrive sur la vue en Get
+        $this->buildView(array('post'=>$post));
+    }*/
+
+
+
+    public function nofound()
+    {
+        $this->buildView(); // pour afficher la vue même si elle est vide.
     }
-*/
 
 }
