@@ -31,7 +31,7 @@ class Comment extends Model
 
 
     /**
-     * Fonction pour compter le nombre de commentaires
+     * Méthode pour compter le nombre de commentaires
      * count permet de compter le nombre d'enregistrement dans la table.
      * @return mixed
      */
@@ -48,6 +48,21 @@ class Comment extends Model
         $sql = 'SELECT id, author, com_content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM comment ORDER BY date DESC LIMIT 0,1';
         $comments = $this->executeRequest($sql);
         return $comments;
+    }
+
+    /**
+     * Méthode pour enregistrer le signalement d'un commentaire dans la BDD.
+     */
+    public function updateComment($id)
+    {
+        $sql = 'UPDATE comment SET signal_comment = "signalé" WHERE id = ?';
+        $comment = $this->executeRequest($sql, array($id));
+        return $comment;
+    }
+
+    public function getComment($id)
+    {
+        //TODO recuperer le com de l'id $id
     }
 
 }

@@ -48,4 +48,23 @@ class ControllerPost extends Controller
         $this->executeAction("post");
 
     }
+
+    /*
+    //signale un commentaire
+    public function signal()
+    {
+        $id = $this->request->getParameter('id'); // récupérer l'id du commentaire
+        $com = $this->comment->getComment($id);
+
+
+        if($com)
+        {
+
+            $this->comment->updateComment($comment['id']);
+        }
+
+        redirection vers le post contenant le commentaire
+    }
+*/
+
 }
