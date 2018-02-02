@@ -58,86 +58,44 @@ class ControllerAdmin extends ControllerSecure
         $title = $this->request->getParameterByDefault('title');
         $content = $this->request->getParameterByDefault('content');
 
-
+        // j'arrive en post car des données sont saisies dans le formulaire
         if($title && $content)
         {
                 $title = $this->request->getParameter('title');
                 $content = $this->request->getParameter('content');
                 $this->post->addPost($title, $content);
-                $this->executeAction("chapters");
+                $this->redirect("admin", "chapters"); // une fois le post créé, je redirige vers la vue Chapters
         }
-        else
-        {
-                $this->buildView(array('title'=>$title,'content'=>$content));
-        }
+
+        // j'arrive sur la vue en Get
+        $this->buildView(array('title'=>$title,'content'=>$content));
     }
 
     public function edit()
     {
-        $post['id'] = $this->request->getParameter('id'); // récupérer le paramètre de l'ID
-        $post = $this->post->getPost($post['id']); // je récupère le post
-        $this->buildView(array('post'=> $post)); // je construis la vue
+        $id =  $this->request->getParameter('id'); // récupérer le paramètre de l'ID
+        $post = $this->post->getPost($id); // je récupère le post
 
+        // j'arrive en post car des données sont saisies dans le formulaire
+        if($this->request->parameterExist('title') && $this->request->parameterExist('content')) {
 
-        if($post['id'] != 0 && $post['title'] && $post['content'])
-        {
-            $post['title'] = $this->request->getParameter('title');
-            $post['content'] = $this->request->getParameter('content');
-            $this->post->updatePost($post['title'], $post['content'], $post['id']);
-            $this->executeAction("chapters");
+            $this->post->updatePost(
+                $this->request->getParameter('title'),
+                $this->request->getParameter('content'),
+                $id
+            );
+
+            $this->redirect("admin", "post/" . $post['id']); // une fois le post créé, je redirige vers la vue Admin/post/iddupost
         }
-        else
-        {
-            throw new Exception('Erreur 404.');
-        }
+
+        // j'arrive sur la vue en Get
+        $this->buildView(array('post'=>$post));
     }
 
     public function delete()
     {
         $post['id'] = $this->request->getParameter('id'); // récupérer le paramètre de l'ID
         $this->post->deletePost($post['id']);
-        $this->executeAction("chapters");
+        $this->redirect("admin", "chapters"); // une fois le post supprimé, je redirige vers la vue chapters
     }
-
-
-
-
-    /*public function edit()
-    {
-        $post['id'] = $this->request->getParameter('id'); // récupérer le paramètre de l'ID
-        $post = $this->post->getPost($post['id']); // J'affiche le post
-        $this->buildView(array('post'=> $post)); // construit la vue
-        $this->post->updatePost($post['title'], $post['content'], $post['id']);
-        //$this->executeAction("chapters"); si je mets buildview je ne peux pas executeaction >> deux écrans l'un sous l'autre.
-    }*/
-
-
-    //$post['title'] = $this->request->getParameter('title'); // affiche moi le titre par défault que je récupere avec value dans post.php
-    //$post['content'] = $this->request->getParameter('content');// affiche moi le contenu par défault que je récupere avec value dans post.php
-    //$post = $this->post->getPost('id');
-    //$post = $this->post->getPost($post['id']);
-    //recuprerle post sinon lever une 404 */
-
-    /*
-    public function edit()
-    {
-        $id = $this->request->getParameter("id");
-        //1- recuperer le post associé à l'id $post
-
-
-        //2- si j'arrive sur cettepage en POST avec title et content de soumis
-             // mettre à jour $post dans la base et redirection
-        // sinon
-            //
-
-        $title = $this->request->getParameter("title"); // name dans le formulaire
-        $content = $this->request->getParameter("content"); // content dans le formulaire
-        // Sauvegarde du commentaire
-        $this->post->editPost($title, $content); // va chercher la méthode dans le Model post l.63
-
-
-        $this->buildView(array('title' => $title, 'content'=> $content));
-    //$this->buildView(array('title'=> $title ?? $post['title'],'content'=> $content ?? $post['title']));
-    } */
-
 }

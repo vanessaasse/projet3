@@ -15,15 +15,12 @@
 
                     <div class="sub-title">Titre :</div>
                     <input type="text" name="title" class="form-control" size="53" max="600"
-                           required value="<?php if(isset($post['title'])) echo $post['title'] ?>">
-                    <?php var_dump($post['title']); ?>
+                           required value="<?= $post['title'] ?>">
                     <br/>
                     <div class="sub-title">Contenu : </div>
-                    <textarea name="content" ><?php if(isset($post['content'])) echo $post['content'] ?></textarea>
-                    <?php var_dump($post['content']); ?>
+                    <textarea name="content" ><?= $post['content'] ?></textarea>
                     <br/>
                     <button type="submit" class="btn btn-default">Mettre à jour</button>
-
 
                 </div>
             </div>

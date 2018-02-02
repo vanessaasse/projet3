@@ -21,12 +21,12 @@
 
     <div class="col-lg-2">
 
-        <div class="alert alert-warning"><i class=" fa fa-refresh "></i><a href="admin/edit/<?= $post['id'] ?>">Mettre à jour</a></div>
+        <div class="alert alert-warning"><i class="fa fa-refresh "></i><a href="admin/edit/<?= $post['id'] ?>"> Mettre à jour</a></div>
 
 
-        <div class="alert alert-success"><i class="fa fa-edit "></i> Publier</div>
+        <!--<div class="alert alert-success"><i class="fa fa-edit "></i> Publier</div>-->
 
-        <div class="alert alert-danger"><i class="fa fa-pencil"></i><a href="admin/delete/<?= $post['id'] ?>">Supprimer</a></div>
+        <div class="alert alert-danger"><i class="fa fa-pencil"></i><a href="admin/delete/<?= $post['id'] ?>"> Supprimer</a></div>
     </div>
 </div>
 
