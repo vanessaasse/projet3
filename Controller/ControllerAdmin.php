@@ -61,18 +61,18 @@ class ControllerAdmin extends ControllerSecure
         // j'arrive en post car des données sont saisies dans le formulaire
         if($title && $content)
         {
-            if(empty($title)) // si les champs titre ou contenu ne sont pas saisis.
+            if(empty($title)) // si les champs titre n'est pas saisi.
             {
                 $errorMsg = "Le champs titre doit être saisi avant enregistrement.";
                 echo $errorMsg;
             }
-            elseif(empty($content))
+            elseif(empty($content)) //si les champs contenu n'est pas saisi.
             {
                 $errorMsg = "Le champs contenu doit être saisi avant enregistrement.";
                 echo $errorMsg;
             }
 
-            else
+            else // si tous les champs sont saisis, enregistrement dans la BDD.
             {
             $title = $this->request->getParameter('title');
             $content = $this->request->getParameter('content');
