@@ -61,14 +61,26 @@ class ControllerAdmin extends ControllerSecure
         // j'arrive en post car des données sont saisies dans le formulaire
         if($title && $content)
         {
-                $title = $this->request->getParameter('title');
-                $content = $this->request->getParameter('content');
-                $this->post->addPost($title, $content);
-                $this->redirect("admin", "chapters"); // une fois le post créé, je redirige vers la vue Chapters
+            if(empty($title) OR empty($content))
+            {
+                $this->buildView(array('title' => $title, 'content' => $content));
+                $errorMsg = "Tous les champs ne sont pas saisis";
+                echo $errorMsg;
+            }
+            else
+            {
+            $title = $this->request->getParameter('title');
+            $content = $this->request->getParameter('content');
+            $this->post->addPost($title, $content);
+            $this->redirect("admin", "chapters"); // une fois le post créé, je redirige vers la vue Chapters
+            }
         }
 
         // j'arrive sur la vue en Get
-        $this->buildView(array('title'=>$title,'content'=>$content));
+        else
+        {
+            $this->buildView(array('title' => $title, 'content' => $content));
+        }
     }
 
     public function edit()
