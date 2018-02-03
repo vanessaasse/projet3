@@ -5,6 +5,8 @@
     <li><a href="admin/create"> >> Ajouter un chapitre </a></li>
 </div>
 
+<?php $errorMsg; ?>
+
 <form method="post" action="admin/create">
 
     <div class="row">
@@ -20,7 +22,7 @@
                 <br/>
                     <button type="submit" class="btn btn-default">Enregistrer</button>
 
-                    <?php $errorMsg; ?>
+
                 </div>
         </div>
     </div>
