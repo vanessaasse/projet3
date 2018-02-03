@@ -13,14 +13,14 @@
                 <div class="panel-body">
 
                 <div class="sub-title">Titre :</div>
-                <input value="<?= $title ?>" type="text" name="title" class="form-control" size="53" max="600" placeholder="Saisissez votre titre" required>
-                <br/>
+                <input value="<?= $title ?>" type="text" name="title" class="form-control" size="53" max="600" placeholder="Saisissez votre titre">
+                    <br/>
                 <div class="sub-title">Contenu : </div>
                 <textarea name="content"><?= $content ?></textarea>
                 <br/>
                     <button type="submit" class="btn btn-default">Enregistrer</button>
 
-
+                    <?php $errorMsg; ?>
                 </div>
         </div>
     </div>
