@@ -61,12 +61,17 @@ class ControllerAdmin extends ControllerSecure
         // j'arrive en post car des données sont saisies dans le formulaire
         if($title && $content)
         {
-            if(empty($title) OR empty($content))
+            if(empty($title)) // si les champs titre ou contenu ne sont pas saisis.
             {
-                $this->buildView(array('title' => $title, 'content' => $content));
-                $errorMsg = "Tous les champs ne sont pas saisis";
+                $errorMsg = "Le champs titre doit être saisi avant enregistrement.";
                 echo $errorMsg;
             }
+            elseif(empty($content))
+            {
+                $errorMsg = "Le champs contenu doit être saisi avant enregistrement.";
+                echo $errorMsg;
+            }
+
             else
             {
             $title = $this->request->getParameter('title');
