@@ -49,14 +49,15 @@ class ControllerConnexion extends Controller
                 $this->request->getSession()->setAttribut("login", $user['login']);
                 $this->redirect("admin");
             }
-            else
+            /*else
             {
                 $this->buildView(array('errorMsg' => 'Login et/ou mot de passe incorrects'), "index");
-            }
+            }*/
         }
         else
         {
-            throw new Exception("Action impossible : login et mot de passe non définis.");
+            $this->buildView(array('errorMsg' => 'Action impossible : login et/ou mot de passe non définis.'), "index");
+            //throw new Exception("Action impossible : login et mot de passe non définis.");
         }
     }
 
