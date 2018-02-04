@@ -66,8 +66,7 @@ class ControllerAdmin extends ControllerSecure
             $content = $this->request->getParameter('content');
             $this->post->addPost($title, $content);
             $this->redirect("admin", "chapters"); // une fois le post créé, je redirige vers la vue Chapters
-            var_dump('if');
-        }
+    }
 
         // j'arrive sur la vue en Get
         else
