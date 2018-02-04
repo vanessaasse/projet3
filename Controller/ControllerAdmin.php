@@ -61,30 +61,34 @@ class ControllerAdmin extends ControllerSecure
         // j'arrive en post car des données sont saisies dans le formulaire
         if($title && $content)
         {
-            if(empty($title)) // si les champs titre n'est pas saisi.
-            {
-                $errorMsg = "Le champs titre doit être saisi avant enregistrement.";
-                echo $errorMsg;
-            }
-            elseif(empty($content)) //si les champs contenu n'est pas saisi.
-            {
-                $errorMsg = "Le champs contenu doit être saisi avant enregistrement.";
-                echo $errorMsg;
-            }
-
-            else // si tous les champs sont saisis, enregistrement dans la BDD.
-            {
+            // si tous les champs sont saisis, enregistrement dans la BDD.
             $title = $this->request->getParameter('title');
             $content = $this->request->getParameter('content');
             $this->post->addPost($title, $content);
             $this->redirect("admin", "chapters"); // une fois le post créé, je redirige vers la vue Chapters
-            }
+            var_dump('if');
         }
 
         // j'arrive sur la vue en Get
         else
         {
+            if($title && $content && is_null($title)) // si les champs titre est NULL.
+            {
+                $this->buildView(array($errorMsg ?? 'errorMsg' ?? 'Le champs titre doit être saisi.'));
+                var_dump('titre');
+            }
+
+            elseif($title && $content && is_null($content)) //si les champs contenu est NULL
+            {
+                $this->buildView(array($errorMsg ?? 'errorMsg'?? 'Le champs contenu doit être saisi.'));
+                var_dump('contenu');
+            }
+
+            else
+            {
             $this->buildView(array('title' => $title, 'content' => $content));
+            var_dump('vue simple');
+            }
         }
     }
 

@@ -5,7 +5,7 @@
     <li><a href="admin/create"> >> Ajouter un chapitre </a></li>
 </div>
 
-<?php $errorMsg; ?>
+
 
 <form method="post" action="admin/create">
 
@@ -14,12 +14,21 @@
             <div class="panel panel-default">
                 <div class="panel-body">
 
-                <div class="sub-title">Titre :</div>
+                    <?php if (isset($errorMsg)): ?>
+                    Erreur : <?= $errorMsg ?>
+                    <?php endif; ?>
+                    <?php var_dump($errorMsg) ?>
+
+
+                    <div class="sub-title">Titre :</div>
                 <input value="<?= $title ?>" type="text" name="title" class="form-control" size="53" max="600" placeholder="Saisissez votre titre">
                     <br/>
+                    <?php var_dump($title) ?>
+
                 <div class="sub-title">Contenu : </div>
                 <textarea name="content"><?= $content ?></textarea>
                 <br/>
+                    <?php var_dump($content) ?>
                     <button type="submit" class="btn btn-default">Enregistrer</button>
 
 
