@@ -39,7 +39,7 @@
                         "<?= $this->sanitize($comment['com_content']) ?>"<br/>
                     <?php endforeach; ?>
 
-                    <div class="link_home"><a href="admin/create"><i class="fa fa-arrow-right"></i> Voir tous les commentaires</div></a>
+                    <div class="link_home"><a href="admin/comments"><i class="fa fa-arrow-right"></i> Voir tous les commentaires</div></a>
 
                 </div>
                 <div class="alert alert-danger">
