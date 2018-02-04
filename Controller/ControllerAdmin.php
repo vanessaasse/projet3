@@ -118,4 +118,14 @@ class ControllerAdmin extends ControllerSecure
         $this->post->deletePost($post['id']);
         $this->redirect("admin", "chapters"); // une fois le post supprimé, je redirige vers la vue chapters
     }
+
+   //Affiche tous les commentaires dans l'admin
+    public function Comments()
+    {
+        $comments = $this->comment->getAllComments(); // va chercher la méthode getPosts dans le Model Post.php l.20
+        $this->buildView(array('comments' => $comments));
+    }
+
+
+
 }
