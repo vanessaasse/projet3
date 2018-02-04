@@ -4,6 +4,15 @@ require_once 'Framework/Model.php';
 
 class Comment extends Model
 {
+    // Affiche tous les commentaires dans l'admin
+    public function getAllComments()
+    {
+        $sql ='SELECT c.id, c.author, c.com_content, c.post_id, DATE_FORMAT(c.date, \'%d/%m/%Y\') AS date_fr, p.id, p.title FROM comment AS c, 
+        post AS p WHERE c.post_id = p.id';
+        $comments = $this->executeRequest($sql);
+        return $comments;
+    }
+
     /**
      * Afficher les commentaires d'un post
      * @param $postId
@@ -14,6 +23,7 @@ class Comment extends Model
         $comments = $this->executeRequest($sql, array($postId));
         return $comments;
     }
+
 
 
     /**
