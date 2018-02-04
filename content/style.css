@@ -2,8 +2,7 @@
 
 .navbar-nav {
     float: right;
-    margin: 10px;
-    padding: 0px;
+    padding-top: 5px;
 }
 
 li a {
@@ -36,6 +35,20 @@ footer
     margin-right: 50px;
     margin-bottom: 50px;
     color: #91aab4;
+}
+
+/* Post Index */
+
+.title-int
+{
+    background-color: #cbdbd7;
+}
+
+.title-int2
+{
+    padding-left: 50px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 
 /* post */

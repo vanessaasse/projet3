@@ -15,7 +15,8 @@
 
             <div class="panel-body">
                 <div class="alert alert-success">
-                    Ce blog comporte <?= $this->sanitize($nbPosts) ?> chapitres et <?= $this->sanitize($nbComments) ?> commentaires.
+                    Ce blog comporte <?= $this->sanitize($nbPosts) ?> chapitres et <?= $this->sanitize($nbComments) ?> commentaires.<br/><br/>
+                    <div class="link_home"><a href="admin/chapters"><i class="fa fa-arrow-right"></i> Accéder aux chapitres</div></a>
                 </div>
                 <div class="alert alert-info">
                     LE DERNIER POST :<br/><br/>
@@ -24,6 +25,8 @@
 
                         <a href="admin/post/<?= $this->sanitize($post['id']) ?>"><?= $this->sanitize($post['title']) ?></a>
                     <?php endforeach; ?>
+
+                    <div class="link_home"><a href="admin/create"><i class="fa fa-arrow-right"></i> Ajouter un chapitre</div></a>
 
 
                 </div>
@@ -36,8 +39,11 @@
                         "<?= $this->sanitize($comment['com_content']) ?>"<br/>
                     <?php endforeach; ?>
 
+                    <div class="link_home"><a href="admin/create"><i class="fa fa-arrow-right"></i> Voir tous les commentaires</div></a>
+
                 </div>
                 <div class="alert alert-danger">
+                    <a href="#">Modifier le profil</a><br/>
                     <a href="connexion/disconnect">Se déconnecter</a>
                 </div>
             </div>
