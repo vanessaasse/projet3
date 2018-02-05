@@ -11,8 +11,8 @@
     <div class="panel panel-default">
     <div class="panel-body">
 
-    <div class="comment">Par <?= $comment['author']?><br/>
-        Posté le <?= $comment['date_fr']?></div><br/>
+    <div class="comment">Posté par <?= $comment['author']?> le <?= $comment['date_fr']?><br/>
+        Dans "<?= $comment['posttitle']?>" </div><br/>
     <?= $comment['com_content']?><br/>
 
 
