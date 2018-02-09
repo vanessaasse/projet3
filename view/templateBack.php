@@ -84,7 +84,7 @@
                 </li>
 
                 <li>
-                    <a href="#"><i class="fa fa-user"></i><span class="li_mq">Profil</span></a>
+                    <a href="admin/#"><i class="fa fa-user"></i><span class="li_mq">Profil</span></a>
                 </li>
                 <li>
                     <a href="connexion/disconnect"><i class="fa fa-sign-out"></i><span class="li_mq">Se déconnecter</span></a>
