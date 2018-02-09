@@ -60,18 +60,13 @@ class ControllerPost extends Controller
 
         if($this->request->parameterExist('nb_report'))
         {
-            $this->comment->signal(
-                $this->request->getParameter('nb_report'),
-                $id
-            );
+            $this->comment->signal($id);
 
             $reportMsg = "Votre signalement a bien été pris en compte.";
-            var_dump('signalement');
 
         }
 
         $this->buildView(array('comment' => $comment, 'reportMsg' => $reportMsg));
-        var_dump('buildview');
     }
 
 
