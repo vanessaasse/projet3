@@ -53,45 +53,27 @@ class ControllerPost extends Controller
     //signale un commentaire
     public function moderation()
     {
+
         $id = $this->request->getParameter('id'); // récupère l'id du commentaire
         $comment = $this->comment->getComment($id); // récupère le contenu du commentaire
+        $reportMsg = ""; // message qui apparaît si signalement
 
-
-        if($comment)
+        if($this->request->parameterExist('nb_report'))
         {
             $this->comment->signal(
-                $this->request->getParameter('signal_comment'),
-                $comment['id']);
-
-            $this->redirect("post","moderation/" . $comment['post_id'] );
-        }
-        else
-        {
-            $this->redirect("post", "nofound");
-        }
-    }
-
-
-    /*public function edit()
-    {
-        $id =  $this->request->getParameter('id'); // récupérer le paramètre de l'ID
-        $post = $this->post->getPost($id); // je récupère le post
-
-        // j'arrive en post car des données sont saisies dans le formulaire
-        if($this->request->parameterExist('title') && $this->request->parameterExist('content')) {
-
-            $this->post->updatePost(
-                $this->request->getParameter('title'),
-                $this->request->getParameter('content'),
+                $this->request->getParameter('nb_report'),
                 $id
             );
 
-            $this->redirect("admin", "post/" . $post['id']); // une fois le post créé, je redirige vers la vue Admin/post/iddupost
+            $reportMsg = "Votre signalement a bien été pris en compte.";
+            var_dump('signalement');
+
         }
 
-        // j'arrive sur la vue en Get
-        $this->buildView(array('post'=>$post));
-    }*/
+        $this->buildView(array('comment' => $comment, 'reportMsg' => $reportMsg));
+        var_dump('buildview');
+    }
+
 
 
 
