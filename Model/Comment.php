@@ -61,16 +61,6 @@ class Comment extends Model
     }
 
     /**
-     * Méthode pour enregistrer le signalement d'un commentaire dans la BDD.
-     */
-    public function signal($id)
-    {
-        $sql = 'UPDATE comment SET nb_report = nb_report + 1 WHERE id = ?';
-        $comment = $this->executeRequest($sql, array($id));
-        return $comment;
-    }
-
-    /**
      * Méthode pour afficher un commentaire.
      */
     public function getComment($id)
@@ -87,6 +77,16 @@ class Comment extends Model
         {
             throw new Exception('Aucun commentaire ne correspond à l\'identifiant suivant : ' .$id . '.<br/>');
         }
+    }
+
+    /**
+     * Méthode pour enregistrer le signalement d'un commentaire dans la BDD.
+     */
+    public function signal($id)
+    {
+        $sql = 'UPDATE comment SET nb_report = nb_report + 1 WHERE id = ?';
+        $comment = $this->executeRequest($sql, array($id));
+        return $comment;
     }
 }
 
