@@ -5,7 +5,7 @@
 
         <div class="content">
         <a href="index.php"><h1>Billet simple pour l'Alaska</h1></a>
-        <h2>par Jean Forteroche, acteur et écrivain</h2>
+        <h2>par Jean Forteroche,<br/>acteur et écrivain</h2>
             <br/>
 
             <p class="major">Bienvenue sur mon nouveau blog ! Pour mon <b>3e ouvrage</b>, j'ai décidé d'innover
