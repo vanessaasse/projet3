@@ -65,12 +65,14 @@ class Comment extends Model
      */
     public function signal($id)
     {
-        $sql = 'UPDATE comment SET signal_comment = 1 WHERE id = ?';
+        $sql = 'UPDATE comment SET nb_report = nb_report + 1 WHERE id = ?';
         $comment = $this->executeRequest($sql, array($id));
         return $comment;
     }
 
-
+    /**
+     * Méthode pour afficher un commentaire.
+     */
     public function getComment($id)
     {
         $sql = 'SELECT id, author, com_content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM comment WHERE id = ?';
