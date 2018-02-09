@@ -144,7 +144,7 @@ class ControllerAdmin extends ControllerSecure
 
 
 
-    /*public function profil()
+    public function profil()
     {
         $users['id'] = $this->request->getParameter('id');
         $user = $this->user->User($id);
@@ -158,7 +158,7 @@ class ControllerAdmin extends ControllerSecure
                 $this->buildView(array('user' => $user));
             }
 
-    }*/
+    }
 
 
 
