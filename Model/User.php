@@ -39,4 +39,18 @@ class User extends Model
             throw new Exception("Aucun utilisateur ne correspond aux identifiants fournis.");
         }
     }
+
+    /*public function User($id)
+    {
+        $sql = 'SELECT login, password FROM users WHERE id =? ';
+        $user = $this->executeRequest($sql, array($id));
+        return $user;
+    }
+
+    public function newPassword($newpassword, $id)
+    {
+        $sql = 'UPDATE users SET password = ? WHERE id = ?';
+        $user = $this->executeRequest($sql, array($newpassword, $id));
+        return $user;
+    }*/
 }
