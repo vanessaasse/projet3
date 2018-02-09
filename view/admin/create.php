@@ -14,22 +14,20 @@
             <div class="panel panel-default">
                 <div class="panel-body">
 
-                    <?php if (isset($errorMsg)): ?>
-                    Erreur : <?= $errorMsg ?>
-                    <?php endif; ?>
-                    <?php var_dump($errorMsg) ?>
+                    <!-- affiche l'erreur en fonction de la condition dans laquelle tu arrives.
+                    Boucle foreach car on appelle une erreur insérée dans un tableau.-->
+                    <?php foreach ($errors as $error): ?>
+                    Erreur : <?= $error ?><br/>
+                    <?php endforeach; ?>
 
 
-                    <div class="sub-title">Titre :</div>
+                <div class="sub-title">Titre :</div>
                 <input value="<?= $title ?>" type="text" name="title" class="form-control" size="53" max="600" placeholder="Saisissez votre titre">
-                    <br/>
-                    <?php var_dump($title) ?>
-
+                <br/>
                 <div class="sub-title">Contenu : </div>
                 <textarea name="content"><?= $content ?></textarea>
                 <br/>
-                    <?php var_dump($content) ?>
-                    <button type="submit" class="btn btn-default">Enregistrer</button>
+                <button type="submit" class="btn btn-default">Enregistrer</button>
 
 
                 </div>
