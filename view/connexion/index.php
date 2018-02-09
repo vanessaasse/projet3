@@ -1,5 +1,9 @@
 <?php $this->title = "Billet pour l'Alaska - Connexion" ?>
 
+<section class="title-int">
+    <h2 class="title-int2"><i class="fa fa-lightbulb-o"></i> "Billet simple pour l'Alaska"</h2>
+</section>
+
 <section class="spotlight style1 orient-right content-align-left">
     <div class="content">
 
