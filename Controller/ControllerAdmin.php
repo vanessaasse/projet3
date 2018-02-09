@@ -48,6 +48,7 @@ class ControllerAdmin extends ControllerSecure
         $this->buildView(array('posts' => $posts));
     }
 
+
     /**
      * Fonction pour afficher un post en entier
      */
@@ -58,6 +59,7 @@ class ControllerAdmin extends ControllerSecure
         $post = $this->post->getPost($postId); // va chercher la méthode GetPost($postId) dans le Model Post.php l.33
         $this->buildView(array('post' => $post));
     }
+
 
     /**
      * Fonction pour créer un post
@@ -96,6 +98,7 @@ class ControllerAdmin extends ControllerSecure
         $this->buildView(array('title' => $title, 'content' => $content, 'errors' => $errors));
     }
 
+
     /**
      * Fonction pour modifier un post dans le BDD
      */
@@ -120,6 +123,7 @@ class ControllerAdmin extends ControllerSecure
         $this->buildView(array('post'=>$post));
     }
 
+
     /**
      * Fonction pour supprimer un post de la BDD
      */
@@ -129,6 +133,7 @@ class ControllerAdmin extends ControllerSecure
         $this->post->deletePost($post['id']);
         $this->redirect("admin", "chapters"); // une fois le post supprimé, je redirige vers la vue chapters
     }
+
 
    //Affiche tous les commentaires dans l'admin, dans la vue admin/comments
     public function Comments()
