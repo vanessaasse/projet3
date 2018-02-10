@@ -29,5 +29,9 @@
 <?php if(isset($reportMsg)): ?>
     <?= $reportMsg ?><br/>
 <?php endif; ?>
+<br/>
+
+    <i class="fa fa-arrow-right"></i><a href="post/post/<?= $comment['post_id'] ?>"> Retour au chapitre</a>
+
 
 </section>
