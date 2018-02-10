@@ -134,13 +134,25 @@ class ControllerAdmin extends ControllerSecure
         $this->redirect("admin", "chapters"); // une fois le post supprimé, je redirige vers la vue chapters
     }
 
-
-   //Affiche tous les commentaires dans l'admin, dans la vue admin/comments
+    /**
+     * Affiche tous les commentaires dans l'admin, dans la vue admin/comments
+     */
     public function Comments()
     {
         $comments = $this->comment->getAllComments();
         $this->buildView(array('comments' => $comments));
     }
+
+
+    /**
+     * Permet de valider un commentaire après signalement
+     * et confirmer sa publication en ligne
+     */
+    public function confirmComment()
+    {
+        $this->buildView(array('comments' => $comments));
+    }
+
 
 
 
