@@ -15,16 +15,22 @@ class ControllerPost extends Controller
         $this->comment = new Comment();
     }
 
-    // pour afficher la liste des chapitres dans ChapterView
-    // Appelle la methode abstraite index() du Controller.php l.36.
+
+    /**
+     * pour afficher la liste des chapitres dans ChapterView
+     * dans post/index
+     * Appelle la methode abstraite index() du Controller.php l.36.
+     */
     public function index()
     {
         $posts = $this->post->getPosts(); // va chercher la méthode getPosts dans le Model Post.php l.20
         $this->buildView(array('posts' => $posts));
     }
 
-    //Affiche les détails d'un post
-    // Appelle la class Request car il y a un paramètre
+    /**
+     * Affiche les détails d'un post dans post/post
+     * Appelle la class Request car il y a un paramètre
+     */
     public function post()
     {
         $postId = $this->request->getParameter("id"); /* le parametre disparait lors de l'annonce de "public function post($postId)". On l'annonce
@@ -35,7 +41,10 @@ class ControllerPost extends Controller
     }
 
 
-    //Ajoute un nouveau commentaire dans un post
+    /**
+     * Ajoute un nouveau commentaire dans un post
+     * dans post/post
+     */
     public function addComment()
     {
         $com_postId = $this->request->getParameter("id"); // reprend l'id de l'url
@@ -50,7 +59,10 @@ class ControllerPost extends Controller
     }
 
 
-    //signale un commentaire
+    /**
+     * signale un commentaire
+     * dans post/moderation
+     */
     public function moderation()
     {
 
@@ -70,8 +82,10 @@ class ControllerPost extends Controller
     }
 
 
-
-
+    /**
+     * page erreur 404
+     * dans post/nofound
+     */
     public function nofound()
     {
         $this->buildView(); // pour afficher la vue même si elle est vide.
