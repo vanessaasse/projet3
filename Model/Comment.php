@@ -4,17 +4,17 @@ require_once 'Framework/Model.php';
 
 class Comment extends Model
 {
-    // Affiche tous les commentaires dans l'admin
+    // Affiche tous les commentaires dans admin/comments
     public function getAllComments()
     {
-        $sql ='SELECT c.id, c.author, c.com_content, c.post_id, c.nb_report, DATE_FORMAT(c.date, \'%d/%m/%Y\') AS date_fr, p.id, p.title AS posttitle FROM comment AS c, 
-        post AS p WHERE c.post_id = p.id ORDER BY nb_report DESC ';
+        $sql ='SELECT id, author, com_content, post_id, nb_report, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM comment 
+        ORDER BY nb_report DESC ';
         $comments = $this->executeRequest($sql);
         return $comments;
     }
 
     /**
-     * Afficher les commentaires d'un post
+     * Afficher les commentaires d'un post post/post
      * @param $postId
      */
     public function getComments($postId)
@@ -53,6 +53,11 @@ class Comment extends Model
         return $line['nbComments'];
     }
 
+
+    /**
+     * Affiche le dernier commentaire dans le tableau de bord
+     * en admin/index
+     */
     public function lastComment()
     {
         $sql = 'SELECT id, author, com_content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM comment ORDER BY date DESC LIMIT 0,1';
@@ -60,12 +65,15 @@ class Comment extends Model
         return $comments;
     }
 
+
     /**
-     * Méthode pour afficher un commentaire.
+     * Méthode pour afficher un commentaire
+     * dans post/moderation
+     * dans admin/comment
      */
     public function getComment($id)
     {
-        $sql = 'SELECT id, author, com_content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM comment WHERE id = ?';
+        $sql = 'SELECT id, author, com_content, post_id, nb_report, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM comment WHERE id = ?';
         $comment = $this->executeRequest($sql, array($id));
 
         if($comment->rowCount() > 0) // RowCount retourne le nombre de lignes affectées par le dernier appel à la fonction PDOStatement
@@ -79,12 +87,38 @@ class Comment extends Model
         }
     }
 
+
     /**
      * Méthode pour enregistrer le signalement d'un commentaire dans la BDD.
+     * dans post/moderation
      */
     public function signal($id)
     {
         $sql = 'UPDATE comment SET nb_report = nb_report + 1 WHERE id = ?';
+        $comment = $this->executeRequest($sql, array($id));
+        return $comment;
+    }
+
+
+    /**
+     * Méthode pour remettre nb_report à 0, ce qui permet de valider le commentaire
+     * (après signalement) via la méthode confirmComment dans le controllerAdmin.
+     */
+    public function validate($id)
+    {
+        $sql = 'UPDATE comment SET nb_report = 0 WHERE id = ?';
+        $comment = $this->executeRequest($sql, array($id));
+        return $comment;
+    }
+
+
+    /**
+     * Méthode pour supprimer le commentaire de la BDD
+     * (après signalement)
+     */
+    public function delete($id)
+    {
+        $sql = 'DELETE FROM comment WHERE id = ?';
         $comment = $this->executeRequest($sql, array($id));
         return $comment;
     }
