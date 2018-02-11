@@ -4,7 +4,9 @@ require_once 'Framework/Model.php';
 
 class Post extends Model
 {
+
     // Pour afficher le dernier chapitre en home
+    // vue home/index
     public function lastPost()
     {
         $sql = 'SELECT id, title, content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM post ORDER BY date DESC LIMIT 0,1';
@@ -19,7 +21,8 @@ class Post extends Model
      */
     public function getPosts()
     {
-        $sql = 'SELECT p.id, title, content, DATE_FORMAT(p.date, \'%d/%m/%Y\') AS date_fr, count(c.id) as nbcomment FROM post as p LEFT JOIN comment as c ON p.id = c.post_id GROUP BY p.id ORDER BY p.date';
+        $sql = 'SELECT p.id, title, content, DATE_FORMAT(p.date, \'%d/%m/%Y\') AS date_fr, count(c.id) as nbcomment FROM post as p 
+        LEFT JOIN comment as c ON p.id = c.post_id GROUP BY p.id ORDER BY p.date';
         $posts = $this->executeRequest($sql);
         return $posts;
     }
@@ -48,7 +51,7 @@ class Post extends Model
 
 
     /**
-     * Fonction pour compter le nombre de posts publiés.
+     * Méthode pour compter le nombre de posts publiés.
      * count permet de compter le nombre d'enregistrement dans la table.
      * @return mixed
      */
@@ -60,13 +63,21 @@ class Post extends Model
         return $line['nbPosts'];
     }
 
-   public function addPost($title, $content)
+
+    /**
+     * Méthode ajouter un post
+     */
+    public function addPost($title, $content)
     {
         $sql = 'INSERT INTO post(title, content, date)' . ' values(?,?, NOW())';
         $post = $this->executeRequest($sql, array($title, $content));
         return $post;
     }
 
+
+    /**
+     * Méthode mettre à jour un post
+     */
     public function updatePost($title, $content, $id)
     {
         $sql = 'UPDATE post SET title = ? , content = ? WHERE id = ?';
@@ -74,6 +85,10 @@ class Post extends Model
         return $post;
     }
 
+
+    /**
+     * Méthode supprimer un post
+     */
     public function deletePost($id)
     {
         $sql = 'DELETE FROM post WHERE id = ?';
