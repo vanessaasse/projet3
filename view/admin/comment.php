@@ -13,7 +13,7 @@
         <div class="signal"><i class="fa fa-arrow-right"></i> Signalé <?= $comment['nb_report'] ?> fois</div>
         <br/>
         Approuver le commentaire<br/>
-        Supprimer le commentaire
+        <a href="admin/deleteComment/<?= $comment['id'] ?>">Supprimer le commentaire</a>
 
 
     </div>
