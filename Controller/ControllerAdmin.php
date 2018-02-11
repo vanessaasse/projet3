@@ -184,7 +184,7 @@ class ControllerAdmin extends ControllerSecure
     {
         $comment['id'] = $this->request->getParameter('id'); // récupérer le paramètre de l'ID
         $this->comment->delete($comment['id']);
-        $this->redirect("admin", "chapters");
+        $this->redirect("admin", "comments");
     }
 
 
