@@ -43,8 +43,8 @@
 
                 </div>
                 <div class="alert alert-danger">
-                    <a href="#">Modifier le profil</a><br/>
-                    <a href="connexion/disconnect">Se déconnecter</a>
+                    <a href="admin/profil">Modifier mon profil</a><br/>
+                    <a href="connexion/disconnect">Me déconnecter</a>
                 </div>
             </div>
         </div>
