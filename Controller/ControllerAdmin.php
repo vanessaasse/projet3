@@ -169,11 +169,13 @@ class ControllerAdmin extends ControllerSecure
     /**
      * Permet de valider un commentaire après signalement
      * et confirmer sa publication en ligne
-
+     */
     public function confirmComment()
     {
-        $this->buildView(array('comments' => $comments));
-    } */
+        $comment['id'] = $this->request->getParameter('id'); // récupérer le paramètre de l'ID
+        $this->comment->validate($comment['id']);
+        $this->redirect("admin", "comments");
+    }
 
 
     /**
