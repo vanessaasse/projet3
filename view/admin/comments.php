@@ -13,16 +13,17 @@
 
     <div class="comment">Posté par <?= $comment['author']?> le <?= $comment['date_fr']?></div><br/>
         <?= substr($comment['com_content'], 0, 250) ?>
-        ... <a href="admin/comment/<?= $comment['id'] ?>">Voir le commentaire</a>
+        ...<a href="admin/comment/<?= $comment['id'] ?>"> Lire le commentaire</a>
 
         <br/><br />
 
 
-        <div class="signal">
             <?php if($comment['nb_report'] > 0): ?>
-                <i class="fa fa-arrow-right"></i> Signalé <?= $comment['nb_report'] ?> fois<br/><br/>
+                <div id="signal">
+                    <i class="fa fa-arrow-right"></i> Signalé <?= $comment['nb_report'] ?> fois
+                </div>
             <?php endif; ?>
-        </div>
+
 
     </div>
     </div>
