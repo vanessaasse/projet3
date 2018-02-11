@@ -25,8 +25,10 @@ class ControllerAdmin extends ControllerSecure
 
 
     /**
-     * Fonction pour afficher le nombre de posts et de commentaires lors que l'on est connecté
-     * à l'espace administrateur.
+     * Fonction pour afficher >
+     * le nombre de posts et de commentaires, le dernier post et le dernier commentaire lors que l'on est connecté à l'espace administrateur.
+     * activation de la session
+     * vue admin/index
      */
     public function index()
     {
@@ -41,6 +43,7 @@ class ControllerAdmin extends ControllerSecure
 
     /**
      * Méthode pour afficher tous les chapitres dans la vue Chapters
+     * vue admin/chapters
      */
     public function chapters()
     {
@@ -51,6 +54,7 @@ class ControllerAdmin extends ControllerSecure
 
     /**
      * Fonction pour afficher un post en entier
+     * vue admin/post
      */
     public function post()
     {
@@ -62,7 +66,8 @@ class ControllerAdmin extends ControllerSecure
 
 
     /**
-     * Fonction pour créer un post
+     * Fonction pour créer un chapitre dans l'admin
+     * vue admin/create
      */
     public function create()
     {
@@ -100,7 +105,8 @@ class ControllerAdmin extends ControllerSecure
 
 
     /**
-     * Fonction pour modifier un post dans le BDD
+     * Fonction pour modifier un chapitre dans le BDD
+     * vue admin/edit
      */
     public function edit()
     {
@@ -126,6 +132,7 @@ class ControllerAdmin extends ControllerSecure
 
     /**
      * Fonction pour supprimer un post de la BDD
+     * dans la vue admin/post l.26
      */
     public function delete()
     {
@@ -134,10 +141,12 @@ class ControllerAdmin extends ControllerSecure
         $this->redirect("admin", "chapters"); // une fois le post supprimé, je redirige vers la vue chapters
     }
 
+
     /**
-     * Affiche tous les commentaires dans l'admin, dans la vue admin/comments
+     * Affiche tous les commentaires dans l'admin
+     * dans la vue admin/comments
      */
-    public function Comments()
+    public function comments()
     {
         $comments = $this->comment->getAllComments();
         $this->buildView(array('comments' => $comments));
@@ -145,13 +154,40 @@ class ControllerAdmin extends ControllerSecure
 
 
     /**
+     * Affiche un commentaire dans l'admin pour le modérer
+     * dans la vue admin/comment
+     */
+    public function comment()
+    {
+        $comment['id']= $this->request->getParameter('id'); // Je récupère l'ID du commentaire
+        $comment = $this->comment->getComment($comment['id']);
+        $this->buildView(array('comment' => $comment));
+    }
+
+
+
+    /**
      * Permet de valider un commentaire après signalement
      * et confirmer sa publication en ligne
-     */
+
     public function confirmComment()
     {
         $this->buildView(array('comments' => $comments));
+    } */
+
+
+    /**
+     * Permet de supprimer définitivement un commentaire
+     * après signalement par un internaute
+     */
+    public function deleteComment()
+    {
+        $comment['id'] = $this->request->getParameter('id'); // récupérer le paramètre de l'ID
+        $this->comment->delete($comment['id']);
+        $this->redirect("admin", "chapters");
     }
+
+
 
 
 
