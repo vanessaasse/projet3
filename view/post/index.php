@@ -8,7 +8,7 @@
 
 <section class="wrapper style1 align-center">
     <div class="inner">
-        <h2>Les différents chapitres</h2>
+        <h2>Les chapitres</h2>
         <div class="items style1 big onscroll-fade-in">
 
 
