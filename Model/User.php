@@ -40,13 +40,19 @@ class User extends Model
         }
     }
 
-    /*public function User($id)
+
+    /**
+     * Affiche le profil de l'utilisateur
+
+    public function User($id)
     {
         $sql = 'SELECT login, password FROM users WHERE id =? ';
         $user = $this->executeRequest($sql, array($id));
         return $user;
-    }
+    }*/
 
+
+    /*
     public function newPassword($newpassword, $id)
     {
         $sql = 'UPDATE users SET password = ? WHERE id = ?';
