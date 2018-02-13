@@ -10,7 +10,7 @@
     <div class="col-md-12">
         <div class="panel panel-default">
             <div class="panel-heading">
-                <h3>Bienvenue, <?= $this->sanitize($login) ?> !</h3>
+                <h3>Bienvenue <?= $this->sanitize(ucfirst($login)) ?> !</h3>
             </div>
 
             <div class="panel-body">
