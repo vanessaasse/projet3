@@ -190,26 +190,29 @@ class ControllerAdmin extends ControllerSecure
     }
 
 
-
-
-
-
+    /**
+     * Affiche le profil de l'utilisateur dans la page admin/profil
+     *
+     */
     public function profil()
     {
-        $users['id'] = $this->request->getParameter('id');
-        $user = $this->user->User($id);
+        $login = $this->request->getSession()->getAttribut("login"); // recupere le login
+        $id = $this->request->getSession()->getAttribut("idUser"); // récupère l'id
 
-        if ($this->request->parameterExist("newpassword")) {
-            $newpassword = $this->request->getParameter("newpassword");
+        // j'arrive en post car des données sont saisies dans le formulaire
+        if($this->request->parameterExist('password')) {
 
-            }
-            else
-            {
-                $this->buildView(array('user' => $user));
-            }
+            $this->post->newPassword(
+                $this->request->getParameter('password'),
+                $id
+            );
+
+            $this->buildview(array(('Votre mot de passe a été mis à jour.')));
+        }
+
+        // j'arrive sur la vue en Get
+        $this->buildView(array('login' => $login));
 
     }
-
-
 
 }
