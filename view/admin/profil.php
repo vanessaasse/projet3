@@ -1,12 +1,11 @@
 <?php $this->title = "Billet pour l'Alaska - Administration"; ?>
 
 <div class="breadcrumb">
-    <li><a href="admin/profil"> >> Mon profil</a></li>
+    <li><a href="admin/profil"> >> Changer mon mot de passe</a></li>
 </div>
 
 
-Bienvenue <?= ucfirst($login) ?><br/><br/>
-
+Bienvenue <?= ucfirst($login) ?> <br/><br/>
 
 
 
@@ -14,15 +13,22 @@ Bienvenue <?= ucfirst($login) ?><br/><br/>
 <form method="post" action="admin/profil">
 
 
+
     <div class="row">
         <div class="col-xs-12">
             <div class="panel panel-default">
                 <div class="panel-body">
 
-                    <div class="sub-title">Mot de passe :</div>
-                    <input type="password" name="password" class="form-control" size="53" max="600"
-                           required value="<?= $users['password'] ?>">
-                    <button type="submit" class="btn btn-default">Mettre à jour</button>
+                    <tr>
+                        <td><label>Mon ancien mot de passe :</label></td>
+                        <td><input type="password" name="password" size="53" max="256" autofocus></td><br/><br/>
+                        <td><label>Mon nouveau mot de passe : </label></td>
+                        <td><input type="password" name="newpassword" size="53" max="256"></td><br/><br/>
+                        <td><label>Confirmation de mon nouveau mot de passe : </label></td>
+                        <td><input type="password" name="newpasswordverif" size="53" max="256"></td><br/><br/>
+                        <td><button type="submit" class="btn btn-default">Mettre à jour</button></td>
+                    </tr>
+
 
                 </div>
             </div>
