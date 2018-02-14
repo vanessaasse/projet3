@@ -41,10 +41,11 @@ class User extends Model
     }
 
 
-    public function newPassword($password, $id)
+    public function newPassword($newpassword, $id)
     {
+        $newpassword = password_hash($newpassword);
         $sql = 'UPDATE users SET password = ? WHERE id = ?';
-        $user = $this->executeRequest($sql, array($password, $id));
+        $user = $this->executeRequest($sql, array($newpassword, $id));
         return $user;
     }
 }
