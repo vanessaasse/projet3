@@ -19,8 +19,8 @@ class ControllerAdmin extends ControllerSecure
      */
     public function __construct()
     {
-        $this->post = new Post;
-        $this->comment = new Comment;
+        $this->post = new Post();
+        $this->comment = new Comment();
     }
 
 
@@ -196,23 +196,47 @@ class ControllerAdmin extends ControllerSecure
      */
     public function profil()
     {
+        // J'appelle toutes les variables dont j'ai besoin par défaut dans la buildview
         $login = $this->request->getSession()->getAttribut("login"); // recupere le login
         $id = $this->request->getSession()->getAttribut("idUser"); // récupère l'id
+        $password = $this->request->getParameterByDefault('password');
+        $newpassword = $this->request->getParameterByDefault('newpassword');
+        $newpasswordverif = $this->request->getParameterByDefault('newpasswordverif');
+        $msgs = [];
+
 
         // j'arrive en post car des données sont saisies dans le formulaire
-        if($this->request->parameterExist('password')) {
+        if($password && $newpassword && $newpasswordverif)
+        {
 
-            $this->post->newPassword(
-                $this->request->getParameter('password'),
-                $id
-            );
+            $this->user->newPassword($newpassword, $id);
+            $msgs[] = "Le mot de passe a bien été mis à jour.";
+        }
 
-            $this->buildview(array(('Votre mot de passe a été mis à jour.')));
+        // j'arrive sur la vue en POST mais le champs titre ou le champs contenu n'est pas saisi
+        // j'affiche des erreurs insérées dans un tableau.
+        else if($_SERVER['REQUEST_METHOD'] === 'POST')
+        {
+            if($newpassword)
+            {
+                $msgs[] = "Le mot de passe n'a pas été saisi correctement.";
+            }
+
+            if($newpasswordverif)
+            {
+                $msgs[] = "Le mot de passe n'a pas été saisi correctement.";
+            }
+
+            if($newpassword != $newpasswordverif)
+            {
+                $msgs[] = "Les mots de passe ne correspondent pas.";
+            }
         }
 
         // j'arrive sur la vue en Get
-        $this->buildView(array('login' => $login));
+        $this->buildView(array('id' => $id, 'login' => $login, 'msgs' => $msgs));
 
     }
+
 
 }
