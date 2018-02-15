@@ -49,10 +49,10 @@ class ControllerConnexion extends Controller
                 $this->request->getSession()->setAttribut("login", $user['login']);
                 $this->redirect("admin");
             }
-            /*else
+            else
             {
                 $this->buildView(array('errorMsg' => 'Login et/ou mot de passe incorrects'), "index");
-            }*/
+            }
         }
         else
         {
