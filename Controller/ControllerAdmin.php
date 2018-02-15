@@ -1,9 +1,15 @@
 <?php
 
+namespace Vanessa\Projet3\Controller;
+
+use \Vanessa\Projet3\Model\Post;
+use \Vanessa\Projet3\Model\Comment;
+use \Vanessa\Projet3\Model\User;
+
 require_once 'ControllerSecure.php';
-require_once 'Model/Post.php';
-require_once 'Model/Comment.php';
-require_once 'Model/User.php';
+//require_once 'Model/Post.php';
+//require_once 'Model/Comment.php';
+//require_once 'Model/User.php';
 
 /**
  * Controller des actions de l'espace administration du site

@@ -1,8 +1,14 @@
 <?php
 
-require_once 'Framework/Controller.php';
-require_once 'Model/Post.php';
-require_once 'Model/Comment.php';
+namespace Vanessa\Projet3\Controller;
+
+use \Vanessa\Projet3\Framework\Controller;
+use \Vanessa\Projet3\Model\Post;
+use \Vanessa\Projet3\Model\Comment;
+
+//require_once 'Framework/Controller.php';
+//require_once 'Model/Post.php';
+//require_once 'Model/Comment.php';
 
 class ControllerPost extends Controller
 {

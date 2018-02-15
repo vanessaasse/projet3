@@ -1,5 +1,7 @@
 <?php
 
+namespace Vanessa\Projet3\Framework;
+
 /**
 * Classe modélisant la session.
 * Encapsule la superglobale $_SESSION.

@@ -1,5 +1,7 @@
 <?php
 
+namespace Vanessa\Projet3\Framework;
+
 class Configuration
 {
     private static $parameters; // attribut qui stocke les valeurs des paramètres de configuration

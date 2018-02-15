@@ -1,5 +1,7 @@
 <?php
 
+namespace Vanessa\Projet3\Framework;
+
 require_once 'Session.php';
 
 

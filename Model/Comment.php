@@ -1,6 +1,10 @@
 <?php
 
-require_once 'Framework/Model.php';
+namespace Vanessa\Projet3\Model;
+
+use \Vanessa\Projet3\Framework\Model;
+
+//require_once 'Framework/Model.php';
 
 class Comment extends Model
 {
