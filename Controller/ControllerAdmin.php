@@ -3,6 +3,7 @@
 require_once 'ControllerSecure.php';
 require_once 'Model/Post.php';
 require_once 'Model/Comment.php';
+require_once 'Model/User.php';
 
 /**
  * Controller des actions de l'espace administration du site
@@ -12,6 +13,7 @@ class ControllerAdmin extends ControllerSecure
 {
     private $post;
     private $comment;
+    private $user;
 
     /**
      * Constructeur
@@ -21,6 +23,7 @@ class ControllerAdmin extends ControllerSecure
     {
         $this->post = new Post();
         $this->comment = new Comment();
+        $this->user = new User();
     }
 
 
