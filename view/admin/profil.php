@@ -37,7 +37,6 @@
                         <?= $msg ?><br/>
                     <?php endforeach; ?>
 
-
                 </div>
             </div>
         </div>
