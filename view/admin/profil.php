@@ -5,7 +5,6 @@
 </div>
 
 
-Bienvenue <?= ucfirst($login) ?> <br/><br/>
 
 
 
@@ -19,6 +18,9 @@ Bienvenue <?= ucfirst($login) ?> <br/><br/>
             <div class="panel panel-default">
                 <div class="panel-body">
 
+                    <h3>Bienvenue <?= ucfirst($login) ?></h3> <br/>
+
+
                     <tr>
                         <td><label>Mon ancien mot de passe :</label></td>
                         <td><input type="password" name="password" size="53" max="256" autofocus></td><br/><br/>
@@ -28,6 +30,12 @@ Bienvenue <?= ucfirst($login) ?> <br/><br/>
                         <td><input type="password" name="newpasswordverif" size="53" max="256"></td><br/><br/>
                         <td><button type="submit" class="btn btn-default">Mettre à jour</button></td>
                     </tr>
+
+                    <!-- affiche le message en fonction de la condition dans laquelle tu arrives.
+                   Boucle foreach car on appelle un message inséré dans un tableau.-->
+                    <?php foreach ($msgs as $msg): ?>
+                        <?= $msg ?><br/>
+                    <?php endforeach; ?>
 
 
                 </div>
