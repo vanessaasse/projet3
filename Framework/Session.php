@@ -1,5 +1,7 @@
 <?php
 
+namespace Vanessa\Projet3\Framework;
+
 /**
 * Classe modélisant la session.
 * Encapsule la superglobale $_SESSION.
@@ -60,7 +62,7 @@ class Session
         }
         else
         {
-            throw new Exception("Attribut '$name' absent de la session.");
+            throw new \Exception("Attribut '$name' absent de la session.");
         }
     }
 }

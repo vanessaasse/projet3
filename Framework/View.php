@@ -1,7 +1,9 @@
 <?php
 
+namespace Vanessa\Projet3\Framework;
 
-require_once 'Configuration.php';
+
+//require_once 'Configuration.php';
 
 class View
 {
@@ -93,7 +95,7 @@ class View
         }
         else
         {
-            throw new Exception("Fichier ' $file ' introuvable.");
+            throw new \Exception("Fichier ' $file ' introuvable.");
         }
     }
 

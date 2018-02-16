@@ -1,8 +1,9 @@
 <?php
 
-require_once 'Controller.php';
-require_once 'Request.php';
-require_once 'View.php';
+namespace Vanessa\Projet3\Framework;
+
+use Vanessa\Projet3\Controller\ControllerHome;
+
 
 class Routeur
 {
@@ -24,13 +25,19 @@ class Routeur
 
         }
 
-        catch (Exception $e) {
+        catch (\Exception $e) {
             $this->manageError($e);
         }
     }
 
 
     // Crée le contrôleur approprié en fonction de la requête reçue
+
+    /**
+     * @param Request $request
+     * @return string|Controller
+     * @throws \Exception
+     */
     private function createController(Request $request)
     {
         $controller = "Home"; // Contrôleur par défaut
@@ -45,15 +52,16 @@ class Routeur
         // Création du nom du fichier du contrôleur
         $classController = "Controller" . $controller;
         $fileController = "Controller/" . $classController . ".php";
+        $fqn = '\\Vanessa\\Projet3\\Controller\\'.$classController;
         if (file_exists($fileController)) {
-            // Instanciation du controller adapté à la requête
-            require ($fileController);
-            $controller = new $classController();
+
+            /** @var Controller $controller */
+            $controller = new $fqn();
             $controller->setRequest($request);
             return $controller;
 
         } else
-            throw new Exception("Fichier '$fileController' introuvable");
+            throw new \Exception("Fichier '$fileController' introuvable");
     }
 
     private function createAction(Request $request)
@@ -67,8 +75,8 @@ class Routeur
     }
 
 
-    // Gère une erreur d'exécution (Exception)
-    private function manageError(Exception $exception)
+    // Gère une erreur d'exécution (\Exception)
+    private function manageError(\Exception $exception)
     {
         $view = new View('error');
         $view->build(array('errorMsg' => $exception->getMessage()));

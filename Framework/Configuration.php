@@ -1,5 +1,7 @@
 <?php
 
+namespace Vanessa\Projet3\Framework;
+
 class Configuration
 {
     private static $parameters; // attribut qui stocke les valeurs des paramètres de configuration
@@ -44,7 +46,7 @@ class Configuration
             }
             if(!file_exists($filepath))
             {
-                throw new Exception("Aucun fichier de configuration trouvé");
+                throw new \Exception("Aucun fichier de configuration trouvé");
             }
             else
             {
