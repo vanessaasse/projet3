@@ -4,7 +4,7 @@ namespace Vanessa\Projet3\Model;
 
 use \Vanessa\Projet3\Framework\Model;
 
-require_once "Framework/Model.php";
+//require_once "Framework/Model.php";
 
 /**
  * Les méthodes de la classe User permettent de vérifier si un utilisateur existe
@@ -40,7 +40,7 @@ class User extends Model
         }
         else
         {
-            throw new Exception("Aucun utilisateur ne correspond aux identifiants fournis.");
+            throw new \Exception("Aucun utilisateur ne correspond aux identifiants fournis.");
         }
     }
 

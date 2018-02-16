@@ -62,7 +62,7 @@ class Session
         }
         else
         {
-            throw new Exception("Attribut '$name' absent de la session.");
+            throw new \Exception("Attribut '$name' absent de la session.");
         }
     }
 }

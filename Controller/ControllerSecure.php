@@ -4,7 +4,7 @@ namespace Vanessa\Projet3\Controller;
 
 use \Vanessa\Projet3\Framework\Controller;
 
-require_once 'Framework/Controller.php';
+//require_once 'Framework/Controller.php';
 
 /**
  * Classe parente des controllers soumis à authentification (controlleradmin notamment)

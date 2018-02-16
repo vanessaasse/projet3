@@ -2,7 +2,7 @@
 
 namespace Vanessa\Projet3\Framework;
 
-require_once 'Session.php';
+//require_once 'Session.php';
 
 
 /*  Cette classe modelise une requête
@@ -20,10 +20,10 @@ class Request
 
     /** Constructeur
      *
-     * @param $parameters Paramètres de la requête
+     * @param array $parameters Paramètres de la requête
      * @param session
      */
-    public function __construct($parameters)
+    public function __construct(array $parameters)
     {
         $this->parameters = $parameters;
         $this->session = new Session();
@@ -57,7 +57,7 @@ class Request
             return $this->parameters[$name];
         }
         else
-            throw new Exception("Paramètre ' $name ' absent de la requête.");
+            throw new \Exception("Paramètre ' $name ' absent de la requête.");
     }
 
     // Renvoie les valeur des paramètres par défaut
@@ -67,7 +67,7 @@ class Request
         {
             return $this->getParameter($name);
         }
-        catch(Exception $e)
+        catch(\Exception $e)
         {
                  return $default;
         }

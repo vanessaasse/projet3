@@ -46,7 +46,7 @@ class Configuration
             }
             if(!file_exists($filepath))
             {
-                throw new Exception("Aucun fichier de configuration trouvé");
+                throw new \Exception("Aucun fichier de configuration trouvé");
             }
             else
             {
