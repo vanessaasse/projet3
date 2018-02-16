@@ -41,7 +41,7 @@ abstract class Model // une classe abstraite ne peut pas être instanciée, pas 
             $password = Configuration::get("password");
 
             // Création de la connexion à la base de données
-            self::$db = new \PDO($dsn, $login, $password,
+            self::$db = new PDO($dsn, $login, $password,
             array (PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
         return self::$db;

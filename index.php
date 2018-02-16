@@ -2,9 +2,9 @@
 
 // Controleur frontal
 
-use Vanessa\Projet3\Framework\Routeur;
+use \Vanessa\Projet3\Framework\Routeur;
 
-//require_once 'Framework/Routeur.php';
+require_once 'Framework/Routeur.php';
 
 $routeur = new Routeur();
 $routeur->pathRequest();

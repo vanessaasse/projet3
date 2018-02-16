@@ -5,8 +5,8 @@ namespace Vanessa\Projet3\Controller;
 use \Vanessa\Projet3\Framework\Controller;
 use \Vanessa\Projet3\Model\Post;
 
-//require_once 'Framework/Controller.php';
-//require_once 'Model/Post.php';
+require_once 'Framework/Controller.php';
+require_once 'Model/Post.php';
 
 class ControllerHome extends Controller
 {
