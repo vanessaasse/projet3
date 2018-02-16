@@ -22,8 +22,6 @@
 
 
                     <tr>
-                        <td><label>Mon ancien mot de passe :</label></td>
-                        <td><input type="password" name="password" size="53" max="256" autofocus></td><br/><br/>
                         <td><label>Mon nouveau mot de passe : </label></td>
                         <td><input type="password" name="newpassword" size="53" max="256"></td><br/><br/>
                         <td><label>Confirmation de mon nouveau mot de passe : </label></td>

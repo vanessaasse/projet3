@@ -202,37 +202,39 @@ class ControllerAdmin extends ControllerSecure
         // J'appelle toutes les variables dont j'ai besoin par défaut dans la buildview
         $login = $this->request->getSession()->getAttribut("login"); // recupere le login
         $id = $this->request->getSession()->getAttribut("idUser"); // récupère l'id
-        $password = $this->request->getParameterByDefault('password');
         $newpassword = $this->request->getParameterByDefault('newpassword');
         $newpasswordverif = $this->request->getParameterByDefault('newpasswordverif');
         $msgs = [];
 
 
         // j'arrive en post car des données sont saisies dans le formulaire
-        if($password && $newpassword && $newpasswordverif)
+        if($newpassword && $newpasswordverif)
         {
-
-            $this->user->newPassword($newpassword, $id);
-            $msgs[] = "Le mot de passe a bien été mis à jour.";
-        }
-
-        // j'arrive sur la vue en POST mais le champs titre ou le champs contenu n'est pas saisi
-        // j'affiche des erreurs insérées dans un tableau.
-        else if($_SERVER['REQUEST_METHOD'] === 'POST')
-        {
-            if($newpassword)
-            {
-                $msgs[] = "Le mot de passe n'a pas été saisi correctement.";
-            }
-
-            if($newpasswordverif)
-            {
-                $msgs[] = "Le mot de passe n'a pas été saisi correctement.";
-            }
 
             if($newpassword != $newpasswordverif)
             {
                 $msgs[] = "Les mots de passe ne correspondent pas.";
+            }
+
+            else
+            {
+                $this->user->newPassword($newpassword, $id);
+                $msgs[] = "Le mot de passe a bien été mis à jour.";
+            }
+        }
+
+        // j'arrive sur la vue en POST mais le champs newpassword ou le champs newpasswordverif n'est pas saisi
+        // j'affiche des erreurs insérées dans un tableau.
+        else if($_SERVER['REQUEST_METHOD'] === 'POST')
+        {
+            if(!$newpassword)
+            {
+                $msgs[] = "Le nouveau mot de passe n'a pas été saisi correctement.";
+            }
+
+            if(!$newpasswordverif)
+            {
+                $msgs[] = "La confirmation du nouveau mot de passe n'a pas été saisi correctement.";
             }
         }
 
