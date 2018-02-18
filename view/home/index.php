@@ -25,7 +25,7 @@
     <section class="spotlight style1 orient-right content-align-center">
 
         <div class="content">
-        <h3 class="intro">Lisez, appréciez, commentez le dernier chapitre :</h3>
+        <h3 class="intro">Lisez & appréciez le dernier chapitre :</h3>
 
             <?php foreach ($posts as $post): ?>
 
