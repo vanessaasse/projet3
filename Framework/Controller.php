@@ -1,7 +1,9 @@
 <?php
 
-require_once 'Request.php';
-require_once 'View.php';
+namespace Vanessa\Projet3\Framework;
+
+//require_once 'Request.php';
+//require_once 'View.php';
 
 abstract class Controller
 {
@@ -14,13 +16,21 @@ abstract class Controller
 
 
 
-    // Définit la requête entrante
+    /**
+     * Définit la requête entrante
+     * @param Request $request
+     */
     public function setRequest(Request $request)
     {
         $this->request = $request;
     }
 
-    // Exécute l'action à réaliser
+
+    /**
+     * Exécute l'action à réaliser
+     * @param $action
+     * @throws \Exception
+     */
     public function executeAction($action)
     {
         if (method_exists($this, $action)) {
@@ -28,7 +38,7 @@ abstract class Controller
             $this->{$this->action}();
         } else {
             $classController = get_class($this);
-            throw new Exception("Action '$action' non définie dans la classe $classController");
+            throw new \Exception("Action '$action' non définie dans la classe $classController");
         }
     }
 
@@ -36,12 +46,17 @@ abstract class Controller
     // Oblige les classes dérivées à implémenter cette action par défaut
     public abstract function index();
 
-    // Génère la vue associée au controller courant
+
+    /**
+     * Génère la vue associée au controller courant
+     * @param array $dataView
+     * @param null $action
+     */
     protected function buildView($dataView = array(), $action = null)
     {
         // Détermination du nom du fichier vue à partir du nom du controller actuel
         $classController = get_class($this); // get_class retourne le nom de la classe d'un objet
-        $controller = str_replace("Controller", "", $classController);
+        $controller = str_replace("Vanessa\Projet3\Controller\Controller", "", $classController);
 
         //Instanciation et génération de la vue
         if(is_null($action))

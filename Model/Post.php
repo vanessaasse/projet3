@@ -1,12 +1,19 @@
 <?php
 
-require_once 'Framework/Model.php';
+namespace Vanessa\Projet3\Model;
+
+use \Vanessa\Projet3\Framework\Model;
+
+//require_once 'Framework/Model.php';
 
 class Post extends Model
 {
 
-    // Pour afficher le dernier chapitre en home
-    // vue home/index
+    /**
+     * Pour afficher le dernier chapitre en home
+     * vue home/index
+     * @return \PDOStatement
+     */
     public function lastPost()
     {
         $sql = 'SELECT id, title, content, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM post ORDER BY date DESC LIMIT 0,1';
@@ -45,7 +52,7 @@ class Post extends Model
 
         else
         {
-            throw new Exception('Aucun billet ne correspond à l\'identifiant suivant : ' .$postId . '.<br/>');
+            throw new \Exception('Aucun billet ne correspond à l\'identifiant suivant : ' .$postId . '.<br/>');
         }
     }
 

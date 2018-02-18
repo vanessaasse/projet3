@@ -1,14 +1,21 @@
 <?php
 
-require_once 'Framework/Model.php';
+namespace Vanessa\Projet3\Model;
+
+use \Vanessa\Projet3\Framework\Model;
+
+//require_once 'Framework/Model.php';
 
 class Comment extends Model
 {
-    // Affiche tous les commentaires dans admin/comments
+    /**
+     * Affiche tous les commentaires dans admin/comments
+     * @return \PDOStatement
+     */
     public function getAllComments()
     {
-        $sql ='SELECT id, author, com_content, post_id, nb_report, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr FROM comment 
-        ORDER BY nb_report DESC ';
+        $sql ='SELECT id, author, com_content, post_id, nb_report, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr 
+        FROM comment ORDER BY nb_report DESC, id DESC ';
         $comments = $this->executeRequest($sql);
         return $comments;
     }
@@ -16,6 +23,7 @@ class Comment extends Model
     /**
      * Afficher les commentaires d'un post post/post
      * @param $postId
+     * @return \PDOStatement
      */
     public function getComments($postId)
     {
@@ -83,7 +91,7 @@ class Comment extends Model
 
         else
         {
-            throw new Exception('Aucun commentaire ne correspond à l\'identifiant suivant : ' .$id . '.<br/>');
+            throw new \Exception('Aucun commentaire ne correspond à l\'identifiant suivant : ' .$id . '.<br/>');
         }
     }
 

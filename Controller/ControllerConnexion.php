@@ -1,7 +1,12 @@
 <?php
 
-require_once 'Framework/Controller.php';
-require_once 'Model/User.php';
+namespace Vanessa\Projet3\Controller;
+
+use Vanessa\Projet3\Framework\Controller;
+use Vanessa\Projet3\Model\User;
+
+//require_once 'Framework/Controller.php';
+//require_once 'Model/User.php';
 
 /**
  * Ce controller sert à gérer la connexion et la déconnexion d'un utilisateur.
@@ -57,7 +62,7 @@ class ControllerConnexion extends Controller
         else
         {
             $this->buildView(array('errorMsg' => 'Action impossible : login et/ou mot de passe non définis.'), "index");
-            //throw new Exception("Action impossible : login et mot de passe non définis.");
+            //throw new \Exception("Action impossible : login et mot de passe non définis.");
         }
     }
 
