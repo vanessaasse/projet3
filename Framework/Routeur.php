@@ -82,7 +82,6 @@ class Routeur
 
 
     // Gère une erreur d'exécution (\Exception)
-
     /**
      * @param \Exception $exception
      */
