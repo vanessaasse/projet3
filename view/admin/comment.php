@@ -7,7 +7,8 @@
     <div class="panel panel-default">
     <div class="panel-body">
 
-        <div class="comment">Posté par <?= $comment['author']?> le <?= $comment['date_fr']?></div><br/>
+        <div class="comment">Posté par <?= $comment['author']?> le <?= $comment['date_fr']?><br/>
+            <?= $comment['post_title']?></div><br/>
         <?= $comment['com_content'] ?>
         <br/><br/>
         <div class="signal"><i class="fa fa-arrow-right"></i> Signalé <?= $comment['nb_report'] ?> fois</div>

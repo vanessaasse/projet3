@@ -11,7 +11,8 @@
     <div class="panel panel-default">
     <div class="panel-body">
 
-    <div class="comment">Posté par <?= $comment['author']?> le <?= $comment['date_fr']?></div><br/>
+    <div class="comment">Posté par <?= $comment['author']?> le <?= $comment['date_fr']?><br/>
+        <?= $comment['post_title']?></div><br/>
         <?= substr($comment['com_content'], 0, 250) ?>
         ...<a href="admin/comment/<?= $comment['id'] ?>"> Lire le commentaire</a>
 
