@@ -14,9 +14,11 @@ class Comment extends Model
      */
     public function getAllComments()
     {
-        $sql ='SELECT id, author, com_content, post_id, nb_report, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr
-        FROM comment
-        ORDER BY nb_report DESC, id DESC ';
+        $sql ='SELECT c.id, c.author, c.com_content, c.post_id, c.nb_report, DATE_FORMAT(c.date, \'%d/%m/%Y\') AS date_fr,
+        p.id AS post_id, p.title AS post_title
+        FROM comment AS c
+        LEFT JOIN post AS p ON p.id = c.post_id
+        ORDER BY c.nb_report DESC, c.id DESC ';
         $comments = $this->executeRequest($sql);
         return $comments;
     }
@@ -82,9 +84,11 @@ class Comment extends Model
      */
     public function getComment($id)
     {
-        $sql = 'SELECT id, author, com_content, post_id, nb_report, DATE_FORMAT(date, \'%d/%m/%Y\') AS date_fr
-        FROM comment
-        WHERE id = ?';
+        $sql = 'SELECT c.id, c.author, c.com_content, c.post_id, c.nb_report, DATE_FORMAT(c.date, \'%d/%m/%Y\') AS date_fr,
+        p.id AS post_id, p.title AS post_title
+        FROM comment AS c
+        LEFT JOIN post AS p ON c.post_id = p.id
+        WHERE c.id = ?';
         $comment = $this->executeRequest($sql, array($id));
 
         if($comment->rowCount() > 0) // RowCount retourne le nombre de lignes affectées par le dernier appel à la fonction PDOStatement
