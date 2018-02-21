@@ -1,7 +1,7 @@
 <?php $this->title = "Billet pour l'Alaska - Administration"; ?>
 
 <div class="breadcrumb">
-    <li><a href="admin/chapters"> >> Les différents chapitres</a></li>
+    <li><a href="admin/chapters"> >> Les chapitres</a></li>
 </div>
 
 <div class="row">
