@@ -77,7 +77,7 @@ abstract class Controller
      */
     protected function redirect($controller, $action = null)
     {
-        $racineWeb = configuration::get("racineWeb", "/");
+        $racineWeb = Configuration::get("racineWeb", "/");
         // redirection vers l'url racine_site/controller/action
         header('Location: ' . $racineWeb . $controller . '/' . $action);
     }
