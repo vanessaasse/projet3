@@ -7,9 +7,9 @@
     <div class="panel panel-default">
     <div class="panel-body">
 
-        <div class="comment">Posté par <?= $comment['author']?> le <?= $comment['date_fr']?><br/>
+        <div class="comment">Posté par <?= $this->sanitize($comment['author'])?> le <?= $comment['date_fr']?><br/>
             <?= $comment['post_title']?></div><br/>
-        <?= $comment['com_content'] ?>
+        <?= $this->sanitize($comment['com_content']) ?>
         <br/><br/>
         <div class="signal"><i class="fa fa-arrow-right"></i> Signalé <?= $comment['nb_report'] ?> fois</div>
         <br/>
